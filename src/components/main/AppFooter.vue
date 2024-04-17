@@ -24,6 +24,18 @@
 
         <p class="copyright">© Live Near Friends 2024</p>
       </div>
+
+      <div class="footer-area">
+        <p class="area-content">
+          Live
+          <span class="figure green"></span>
+          Near 
+          Friends
+          <span class="figure pink"></span>
+          <span class="figure red"></span>
+        </p>
+      </div>
+
     </div>
   </footer>
 </template>
@@ -64,6 +76,57 @@
     text-transform: uppercase;
     border: none;
   }
+
+
+  .footer-area {
+
+  }
+  .area-content  {
+    font-size: 180px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .figure {
+    height: 95px;
+    width: 124px;
+    /* margin: 0 50px 0 0; */
+    position: relative;
+    display: inline-block;
+  }
+  .figure:before {
+    content: "";
+    height: 0; 
+    width: 0;
+    position: absolute; 
+    left: 0; 
+    top: -35px;
+    border-bottom: 35px solid #B1BA5C;
+    border-left: 62px solid transparent;
+    border-right: 62px solid transparent;
+  }
+
+  .figure.green {
+    background: #03C745;
+  }
+  .figure.green:before {
+    border-bottom: 35px solid #03C745;
+  }
+
+  .figure.pink {
+    background: #E1BAFF;
+  }
+  .figure.pink:before {
+    border-bottom: 35px solid #E1BAFF;
+  }
+
+  .figure.red {
+    background: #FC4F24;
+  }
+  .figure.red:before {
+    border-bottom: 35px solid #FC4F24;
+  }
+
 
   @media (min-width: 1024px) {
 
