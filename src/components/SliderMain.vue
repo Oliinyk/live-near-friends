@@ -29,26 +29,32 @@ export default defineComponent({
             {
                 heading: 'Living close to friends matters.',
                 icon: BloombergIcon,
+                color: 'green',
             },
             {
                 heading: 'Living near happy friends has the greatest effect on your own happiness.',
                 icon: LifehackerIcon,
+                color: 'orange',
             },
             {
                 heading: 'Live closer to your friends.',
                 icon: AtlanticIcon,
+                color: 'lilac',
             },
             {
                 heading: 'You’d be happier living closer to friends. Why don’t you.',
                 icon: CultureStudyIcon,
+                color: 'red',
             },
             {
                 heading: 'Living close to friends matters.',
                 icon: BloombergIcon,
+                color: 'green',
             },
             {
                 heading: 'Living near happy friends has the greatest effect on your own happiness.',
                 icon: LifehackerIcon,
+                color: 'orange',
             }
         ]);
         const onSwiper = (swiper: SwiperType) => {
@@ -85,11 +91,12 @@ export default defineComponent({
                     },
                     '1200': {
                         slidesPerView: 4,
+                        spaceBetween: 30,
                     },
                 }"
             >
                 <swiper-slide v-for="(slide, index) in slides" :key="index">
-                    <SliderMainItem>
+                    <SliderMainItem :class="slide.color">
                         <template #heading v-if="slide.heading">{{ slide.heading }}</template>
                         <template #icon>
                             <component :is="{...slide.icon}" v-if="slide.icon" />
@@ -104,14 +111,64 @@ export default defineComponent({
 <style scoped>
 .slider-section {
     background-color: #FFE91A;
-    padding: 20px 0;
+    padding: 10px 0 15px;
 }
 .slider-section-title {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.2;
     text-transform: uppercase;
+    font-family:"Scto-Grotesk-A-Medium";
     font-weight: 700;
     color: var(--black);
-    margin: 0 0 150px;
+    text-wrap: balance;
+    margin: 0 0 96px;
+    letter-spacing: -1px;
+}
+.swiper {
+    margin-right: -15px;
+}
+.item {
+    transition: background-color 0.25s;
+}
+.item:hover.orange {
+    background-color: #FFB042;
+}
+.item:hover.green {
+    background-color: #03C745;
+}
+.item:hover.lilac {
+    background-color: #E1BAFF;
+}
+.item:hover.red {
+    background-color: #FC4F24;
+}
+.logo-item svg {
+  max-height: 25px;
+  max-width: 92px;
+}
+.swiper-slide:nth-child(2n) .logo-item svg {
+    max-height: 28px;
+    max-width: 75px;
+}
+@media (min-width: 768px) {
+    .slider-section { 
+        padding: 25px 0 30px;
+    }
+    .slider-section-title {
+        font-size: 20px;
+        margin: 0 0 198px;
+    }
+    .swiper {
+        margin: 0;
+    }
+    .logo-item svg {
+        max-height: 45px;
+        max-width: 131px;
+    }
+    .swiper-slide:nth-child(2n) .logo-item svg {
+        max-height: 40px;
+        max-width: 107px;
+    }
 }
 
 </style>

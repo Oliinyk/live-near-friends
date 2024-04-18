@@ -18,23 +18,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 412px;
+  min-height: 288px;
+  padding: 10px 15px;
 }
 .item-title {
   font-size: 20px;
   font-weight: 300;
   line-height: 1.2;
+  letter-spacing: -0.7px;
   color: var(--black);
 }
 .logo-item {
   display: flex;
 }
-@media (min-width: 1024px) {
+.logo-item svg {
+  max-height: 30px;
+}
+@media (min-width: 768px) {
   .item {
-    padding: 1rem;
+    padding: 13px 20px;
+    min-height: 412px;
   }
   .item-title {
     font-size: 30px;
+  }
+  .logo-item svg {
+    max-height: 45px;
   }
 }
 </style>
