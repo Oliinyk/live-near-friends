@@ -110,7 +110,7 @@ export default defineComponent({
 
 <style scoped>
 .slider-section {
-    background-color: #FFE91A;
+    background-color: var(--yellow);
     padding: 10px 0 15px;
 }
 .slider-section-title {
@@ -134,7 +134,7 @@ export default defineComponent({
     background-color: #FFB042;
 }
 .item:hover.green {
-    background-color: #03C745;
+    background-color: var(--green);
 }
 .item:hover.lilac {
     background-color: #E1BAFF;

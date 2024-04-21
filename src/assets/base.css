@@ -11,12 +11,18 @@
 
   --indigo: #2c3e50;
 
+  --green: #03C745;
+  --yellow: #FFE91A;
+  --ivory: #FEFCF0;
+  --violet: #E1BAFF;
+  --gray: #E9E9E9;
+
   --divider-light-1: rgba(60, 60, 60, 0.29);
   --divider-light-2: rgba(60, 60, 60, 0.12);
   --divider-dark-1: rgba(84, 84, 84, 0.65);
   --divider-dark-2: rgba(84, 84, 84, 0.48);
 
-  --text-light-1: var(--indigo);
+  --text-light-1: var(--black);
   --text-light-2: rgba(60, 60, 60, 0.66);
   --text-dark-1: var(--white);
   --text-dark-2: rgba(235, 235, 235, 0.64);
@@ -24,7 +30,7 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--white);
+  --color-background: var(--ivory);
   --color-background-soft: var(--white-soft);
   --color-background-mute: var(--white-mute);
 
@@ -60,7 +66,7 @@
 }
 
 @font-face{
-  font-family:"Scto-Grotesk-A";
+  font-family: "Scto-Grotesk-A";
   src: url("./fonts/Scto-Grotesk-A.eot");
   src: url("./fonts/Scto-Grotesk-A.eot?#iefix") format("embedded-opentype"),
    url("./fonts/Scto-Grotesk-A.woff") format("woff"),
@@ -72,7 +78,7 @@
 }
 
 @font-face{
-  font-family:"Scto-Grotesk-A-Medium";
+  font-family: "Scto-Grotesk-A-Medium";
   src: url("./fonts/Scto-Grotesk-A-Medium.eot");
   src: url("./fonts/Scto-Grotesk-A-Medium.eot?#iefix") format("embedded-opentype"),
    url("./fonts/Scto-Grotesk-A-Medium.woff") format("woff"),
@@ -81,6 +87,18 @@
    url("./fonts/Scto-Grotesk-A-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
+}
+
+@font-face{
+  font-family: "Consort RR LightCondensed";
+  src: url("./fonts/Consort RR LightCondensed.eot");
+  src: url("./fonts/Consort RR LightCondensed.eot?#iefix")format("embedded-opentype"),
+      url("./fonts/Consort RR LightCondensed.woff")format("woff"),
+      url("./fonts/Consort RR LightCondensed.woff2")format("woff2"),
+      url("./fonts/Consort RR LightCondensed.ttf")format("truetype"),
+      url("./fonts/Consort RR LightCondensed.otf") format("opentype");
+  font-weight:normal;
+  font-style:normal;
 }
 
 body {
