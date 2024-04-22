@@ -5,9 +5,24 @@ a {
   text-decoration: none;
   transition: all .25s;
 }
+img {
+  max-width: 100%;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
+}
+.btn {
+  display: inline-block;
+  background-color: var(--green);
+  font-family: "Scto-Grotesk-A-Medium";
+  font-weight: 700;
+  font-size: 12px;
+  padding: 8px 11px;
+}
+.btn:hover {
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 @media (min-width: 1024px) {

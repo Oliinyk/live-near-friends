@@ -35,13 +35,21 @@ export default {
         amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu.</p>
         <a href="#" class="link">READ MORE STORIES ON OUR BLOG</a>
       </div>
-
       <div class="stories-slider">
         <swiper
-          :slides-per-view="2"
-          :space-between="50"
+          class="stories-slider-wrapper"
+          :slides-per-view="1.5"
+          :space-between="30"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
+          :breakpoints="{
+            '768': {
+              slidesPerView: 2,
+            },
+            '1200': {
+              slidesPerView: 2,
+            },
+          }"
         >
           <swiper-slide>
             <div class="item">
@@ -49,43 +57,44 @@ export default {
                 <img alt="slide-item" src="@/assets/img/slide-item-1.jpg" />
               </div>
               <div class="item-text-holder">
-                <p>Case Study #001</p>
-                <h3>3 friends raise kids together in Oakland</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu, non facilisis mauris.</p>
-                <a href="#" class="link">Read the full story</a>
+                <p class="above-title">Case Study #001</p>
+                <h3 class="item-title">3 friends raise kids together in Oakland</h3>
+                <p class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu, non facilisis mauris.</p>
+                <a href="#" class="item-link">Read the full story</a>
               </div>
             </div>
           </swiper-slide>
-
           <swiper-slide>
             <div class="item">
               <div class="img-holder">
                 <img alt="slide-item" src="@/assets/img/slide-item-2.jpg" />
               </div>
               <div class="item-text-holder">
-                <p>Case Study #002</p>
-                <h3>College friends reunite in Durham</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu, non facilisis mauris.</p>
-                <a href="#" class="link">Read the full story</a>
+                <p class="above-title">Case Study #002</p>
+                <h3 class="item-title">College friends reunite in Durham</h3>
+                <p class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu, non facilisis mauris.</p>
+                <a href="#" class="item-link">Read the full story</a>
               </div>
             </div>
           </swiper-slide>
         </swiper>
       </div>
-
     </div>
   </section>
 </template>
 
 <style scoped>
 .stories-section {
-  padding: 115px 0 60px;
+  padding: 58px 0 54px;
 }
 .title {
   font-family: "Consort RR LightCondensed";
   font-size: 40px;
   line-height: 0.85;
   margin: 0 0 20px;
+}
+.text-holder {
+  margin: 0 0 25px;
 }
 .subtitle {
   font-size: 16px;
@@ -104,13 +113,80 @@ export default {
   max-width: 440px;
   margin: 0 auto;
 }
+.item-text-holder {
+  margin: 5px 0 0;
+}
+.above-title {
+  font-size: 6px;
+  margin: 0 0 14px;
+}
+.item-title {
+  font-family: "Consort RR LightCondensed";
+  font-size: 30px;
+  line-height: 0.85;
+  margin: 0 0 14px;
+}
+.item-text {
+  font-size: 10px;
+  line-height: 1.25;
+  margin: 0 0 5px;
+}
+.item-link {
+  font-size: 6px;
+  font-family: "Scto-Grotesk-A-Medium";
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
 @media (min-width: 768px) {
+  .stories-section {
+    padding: 115px 0 125px;
+  }
   .title {
     font-size: 100px;
     margin: 0 0 43px;
   }
+  .text-holder {
+    max-width: 50%;
+    margin: 0;
+  }
+  .item-text-holder {
+    margin: 17px 0 0;
+  }
   .subtitle {
     font-size: 20px;
   }
+  .above-title {
+    font-size: 12px;
+    margin: 0 0 24px;
+  }
+  .item-title {
+    font-size: 60px;
+    margin: 0 0 25px;
+  }
+  .item-text {
+    font-size: 20px;
+    margin: 0 0 25px;
+  }
+  .item-link {
+    font-size: 12px;
+  }
+  .stories-slider {
+    margin: -105px 0 0;
+  }
+  .stories-slider .swiper-slide:nth-child(1) {
+    padding-top: 24%;
+  }
 }
+@media (min-width: 992px) {
+  .stories-slider .swiper-slide:nth-child(1) {
+    padding-top: 230px;
+  }
+}
+</style>
+
+<style>
+  .stories-slider-wrapper .swiper-wrapper {
+    align-items: flex-end;
+  }
 </style>

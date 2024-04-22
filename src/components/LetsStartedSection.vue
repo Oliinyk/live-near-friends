@@ -4,7 +4,7 @@ export default {
     return {
       items: [
         {
-          imgSrc: './src/assets/img/img-bg.png',
+          imgSrc: '@/assets/img/img-bg.png',
           title: 'Minihood',
           subtitle: 'Buy and rent homes within a short walk.',
           buttonHref: '#',
