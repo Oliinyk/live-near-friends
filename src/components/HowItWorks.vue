@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import IconHowItWorksBg from './icons/IconHowItWorksBg.vue';
+  import IconHowItWorksMobBg from './icons/IconHowItWorksMobBg.vue';
 </script>
 
 <template>
@@ -33,6 +34,7 @@
             into <span class="bold">NEIGHBORS.</span></p>
           </div>
           <IconHowItWorksBg class="how-it-works-bg"/>
+          <IconHowItWorksMobBg class="how-it-works-mob-bg"/>
         </div>
       </div>
     </div>
@@ -41,8 +43,9 @@
 
 <style scoped>
 .how-it-works {
+  background-color: var(--ivory);
   text-align: center;
-  padding: 116px 0 118px;
+  padding: 58px 0;
   overflow: hidden;
   position: relative;
 }
@@ -50,21 +53,28 @@
   font-family: "Consort RR LightCondensed";
   font-size: 40px;
   line-height: 0.85;
-  margin: 0 0 110px;
+  margin: 0 0 58px;
 }
 .how-it-works-inner {
   position: relative;
 }
-.how-it-works-bg {
+.how-it-works-bg,
+.how-it-works-mob-bg {
   position: absolute;
-  top: 0;
+  top: 15px;
   left: 0;
   width: 100%;
   z-index: 0;
 }
+.how-it-works-bg {
+  display: none;
+  top: 0;
+}
 .how-it-works-inner p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.2;
+  text-wrap: balance;
+  max-width: 320px;
 }
 .text-holder {
   position: relative;
@@ -72,8 +82,11 @@
   max-width: 235px;
   margin: 0 auto;
   text-wrap: balance;
-  padding-top: 125px;
-  padding-bottom: 63px;
+  padding-top: 97px;
+  padding-bottom: 35px;
+}
+.text-holder:nth-child(2) {
+  max-width: 190px;
 }
 .text-holder:nth-child(3) {
   max-width: 280px;
@@ -99,9 +112,34 @@
   width: 30px;
 }
 @media (min-width: 768px) {
+  .how-it-works {
+    padding: 116px 0 118px;
+  }
   .title {
     font-size: 100px;
     margin: 0 0 125px;
+  }
+  .how-it-works-inner p {
+    font-size: 20px;
+  }
+  .text-holder {
+    padding-top: 125px;
+    padding-bottom: 63px;
+  }
+  .text-holder:nth-child(2) {
+    max-width: 235px;
+  }
+  .text-holder:nth-child(3) {
+    max-width: 280px;
+  }
+  .text-holder:nth-child(4) {
+    max-width: 305px;
+  }
+  .how-it-works-bg {
+    display: block;
+  }
+  .how-it-works-mob-bg {
+    display: none;
   }
 }
 </style>

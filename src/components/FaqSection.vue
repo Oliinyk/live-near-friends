@@ -62,6 +62,7 @@ const toggleAnswer = (index: number) => {
 
 <style scoped>
 .faq-section {
+  background-color: var(--ivory);
   padding: 55px 0 45px;
 }
 .title-wrap {
@@ -94,11 +95,13 @@ const toggleAnswer = (index: number) => {
   margin: 0 0 15px;
 }
 .item-title {
+  color: var(--black);
   font-family: "Scto-Grotesk-A-Medium";
   font-size: 16px;
   letter-spacing: -1.5px;
   line-height: 1.2;
   text-wrap: balance;
+  padding: 0 15px 0 0;
 }
 .question {
   cursor: pointer;

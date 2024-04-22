@@ -85,6 +85,7 @@ export default {
 
 <style scoped>
 .stories-section {
+  background-color: var(--ivory);
   padding: 58px 0 54px;
 }
 .title {
