@@ -93,6 +93,7 @@ export default {
   font-size: 40px;
   line-height: 0.85;
   margin: 0 0 20px;
+  color: var(--black);
 }
 .text-holder {
   margin: 0 0 25px;
@@ -103,12 +104,14 @@ export default {
   letter-spacing: -0.5px;
   max-width: 530px;
   margin: 0 0 15px;
+  color: var(--black);
 }
 .link {
   font-size: 12px;
   font-family: "Scto-Grotesk-A-Medium";
   font-weight: 700;
   letter-spacing: -0.5px;
+  color: var(--black);
 }
 .stories-slider .item {
   max-width: 440px;
@@ -120,17 +123,20 @@ export default {
 .above-title {
   font-size: 6px;
   margin: 0 0 14px;
+  color: var(--black);
 }
 .item-title {
   font-family: "Consort RR LightCondensed";
   font-size: 30px;
   line-height: 0.85;
   margin: 0 0 14px;
+  color: var(--black);
 }
 .item-text {
   font-size: 10px;
   line-height: 1.25;
   margin: 0 0 5px;
+  color: var(--black);
 }
 .item-link {
   font-size: 6px;
@@ -138,6 +144,7 @@ export default {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.5px;
+  color: var(--black);
 }
 @media (min-width: 768px) {
   .stories-section {

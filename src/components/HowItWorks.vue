@@ -1,40 +1,31 @@
-<script setup lang="ts">
-  import IconHowItWorksBg from './icons/IconHowItWorksBg.vue';
-  import IconHowItWorksMobBg from './icons/IconHowItWorksMobBg.vue';
-</script>
-
 <template>
   <section class="how-it-works">
-    <div class="container">
-      <div class="how-it-works-wrap">
-        <h1 class="title">How it works</h1>
-        <div class="how-it-works-inner">
-          <div class="text-holder">
-            <span class="pin">1</span>
-            <p>Pick the ideal <span class="bold">LOCATION</span>
-            for your minihood.</p>
-          </div>
-          <div class="text-holder">
-            <span class="pin">2</span>
-            <p>Sell your friends 
-            on the <span class="bold">VISION.</span></p>
-          </div>
-          <div class="text-holder">
-            <span class="pin">3</span>
-            <p>Identify <span class="bold">HOMES</span> for sale or rent that fit everyone’s needs.</p>
-          </div>
-          <div class="text-holder">
-            <span class="pin">4</span>
-            <p>Get hands-on assistance from 
-            a <span class="bold">FREE</span> Live Near Friends Advisor.</p>
-          </div>
-          <div class="text-holder">
-            <span class="pin">5</span>
-            <p>Turn your friends
-            into <span class="bold">NEIGHBORS.</span></p>
-          </div>
-          <IconHowItWorksBg class="how-it-works-bg"/>
-          <IconHowItWorksMobBg class="how-it-works-mob-bg"/>
+    <div class="how-it-works-wrap">
+      <h1 class="title">How it works</h1>
+      <div class="how-it-works-inner">
+        <div class="text-holder">
+          <span class="pin">1</span>
+          <p>Pick the ideal <span class="bold">LOCATION</span>
+          for your minihood.</p>
+        </div>
+        <div class="text-holder">
+          <span class="pin">2</span>
+          <p>Sell your friends 
+          on the <span class="bold">VISION.</span></p>
+        </div>
+        <div class="text-holder">
+          <span class="pin">3</span>
+          <p>Identify <span class="bold">HOMES</span> for sale or rent that fit everyone’s needs.</p>
+        </div>
+        <div class="text-holder">
+          <span class="pin">4</span>
+          <p>Get hands-on assistance from 
+          a <span class="bold">FREE</span> Live Near Friends Advisor.</p>
+        </div>
+        <div class="text-holder">
+          <span class="pin">5</span>
+          <p>Turn your friends
+          into <span class="bold">NEIGHBORS.</span></p>
         </div>
       </div>
     </div>
@@ -54,27 +45,22 @@
   font-size: 40px;
   line-height: 0.85;
   margin: 0 0 58px;
+  color: var(--black);
 }
 .how-it-works-inner {
   position: relative;
 }
-.how-it-works-bg,
-.how-it-works-mob-bg {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-}
-.how-it-works-bg {
-  display: none;
-  top: 0;
+.how-it-works-inner {
+  background-image: url('../assets/img/IconHowItWorksMobBg.svg');
+  background-repeat: no-repeat;
+  background-position: center 15px;
 }
 .how-it-works-inner p {
   font-size: 16px;
   line-height: 1.2;
   text-wrap: balance;
   max-width: 320px;
+  color: var(--black);
 }
 .text-holder {
   position: relative;
@@ -135,11 +121,9 @@
   .text-holder:nth-child(4) {
     max-width: 305px;
   }
-  .how-it-works-bg {
-    display: block;
-  }
-  .how-it-works-mob-bg {
-    display: none;
+  .how-it-works-inner {
+    background-image: url('../assets/img/IconHowItWorksBg.svg');
+    background-position: center 0;
   }
 }
 </style>

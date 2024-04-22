@@ -21,6 +21,7 @@
 
 <style scoped>
 .know-section {
+  background-color: var(--ivory);
   padding: 112px 0 112px;
   text-align: center;
 }
@@ -31,6 +32,7 @@
   letter-spacing: -0.5px;
   text-transform: uppercase;
   margin: 0 0 20px;
+  color: var(--black);
 }
 .text-holder {
   position: relative;
@@ -42,6 +44,7 @@
   max-width: 900px;
   margin-left: 60px;
   margin-right: 60px;
+  color: var(--black);
 }
 .arrow-wrap {
   position: absolute;

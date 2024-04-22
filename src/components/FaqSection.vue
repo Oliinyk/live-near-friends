@@ -72,6 +72,7 @@ const toggleAnswer = (index: number) => {
   margin: 0 0 25px;
 }
 .title {
+  color: var(--black);
   font-family: "Scto-Grotesk-A-Medium";
   font-weight: 700;
   font-size: 16px;
@@ -81,6 +82,7 @@ const toggleAnswer = (index: number) => {
   max-width: 50%;
 }
 .subtitle {
+  color: var(--black);
   font-family: "Scto-Grotesk-A-Medium";
   font-weight: 700;
   text-align: right;
@@ -121,6 +123,7 @@ const toggleAnswer = (index: number) => {
   transition: max-height .25s ease-in-out;
 }
 .item-answer {
+  color: var(--black);
   padding: 15px 0 0;
 }
 .arrow {
