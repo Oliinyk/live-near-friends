@@ -1,36 +1,41 @@
 <script lang="ts">
+import { ref } from 'vue';
+import imgBg from '@/assets/img/img-bg.png';
+
 export default {
-  data() {
+  name: 'LetsStartedSection',
+  setup() {
+    const items = ref([
+      {
+        imgSrc: imgBg,
+        title: 'Minihood',
+        subtitle: 'Buy and rent homes within a short walk.',
+        buttonHref: '#',
+        buttonText: 'GET STARTED',
+        isActive: true
+      },
+      {
+        imgSrc: '/src/assets/img/img-bg.png',
+        title: 'Apartment Cluster',
+        subtitle: 'Rent a cluster of apartments in the same building.',
+        buttonHref: '#',
+        buttonText: 'COMING SOON – GET NOTIFIED',
+        isActive: false
+      },
+      {
+        imgSrc: '/src/assets/img/img-bg.png',
+        title: 'Backyard Buds',
+        subtitle: 'Share a backyard with a friend.',
+        buttonHref: '#',
+        buttonText: 'COMING SOON – GET NOTIFIED',
+        isActive: false
+      }
+    ]);
     return {
-      items: [
-        {
-          imgSrc: '@/assets/img/img-bg.png',
-          title: 'Minihood',
-          subtitle: 'Buy and rent homes within a short walk.',
-          buttonHref: '#',
-          buttonText: 'GET STARTED',
-          isActive: true
-        },
-        {
-          imgSrc: './src/assets/img/img-bg.png',
-          title: 'Apartment Cluster',
-          subtitle: 'Rent a cluster of apartments in the same building.',
-          buttonHref: '#',
-          buttonText: 'COMING SOON – GET NOTIFIED',
-          isActive: false
-        },
-        {
-          imgSrc: './src/assets/img/img-bg.png',
-          title: 'Backyard Buds',
-          subtitle: 'Share a backyard with a friend.',
-          buttonHref: '#',
-          buttonText: 'COMING SOON – GET NOTIFIED',
-          isActive: false
-        }
-      ]
+      items,
     };
-  }
-};
+  },
+}
 </script>
 
 <template>
