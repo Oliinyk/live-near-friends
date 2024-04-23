@@ -94,9 +94,13 @@ export default {
   line-height: 0.85;
   margin: 0 0 20px;
   color: var(--black);
+  position: relative;
+  z-index: 2;
 }
 .text-holder {
   margin: 0 0 25px;
+  position: relative;
+  z-index: 2;
 }
 .subtitle {
   font-size: 16px;
@@ -116,6 +120,9 @@ export default {
 .stories-slider .item {
   max-width: 440px;
   margin: 0 auto;
+}
+.img-holder img {
+  border-radius: 7px;
 }
 .item-text-holder {
   margin: 5px 0 0;
@@ -180,10 +187,31 @@ export default {
     font-size: 12px;
   }
   .stories-slider {
-    margin: -105px 0 0;
+    margin: -225px 0 0;
   }
   .stories-slider .swiper-slide:nth-child(1) {
     padding-top: 24%;
+  }
+  .stories-slider .item:after {
+    content: '';
+    background-image: url('../assets/img/mask-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -125px;
+    left: 0px;
+    max-height: 375px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: opacity 0.5s;
+    opacity: 0;
+  }
+  .stories-slider .swiper-slide:nth-child(1) .item:after {
+    top: 110px;
+  }
+  .stories-slider .item:hover:after {
+    opacity: 1;
   }
 }
 @media (min-width: 992px) {
@@ -191,10 +219,20 @@ export default {
     padding-top: 230px;
   }
 }
+@media (min-width: 1200px) {
+  .stories-slider .item:after {
+    max-height: 675px;
+  }
+}
 </style>
 
 <style>
   .stories-slider-wrapper .swiper-wrapper {
     align-items: flex-end;
+  }
+  @media (min-width: 768px) {
+    .stories-slider-wrapper .swiper-wrapper {
+      padding-top: 117px;
+    }
   }
 </style>

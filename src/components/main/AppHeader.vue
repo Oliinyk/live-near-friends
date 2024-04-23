@@ -12,57 +12,30 @@ const toggleMenu = () => {
 <template>
   <header class="header">
     <div class="container">
-
-      <!-- Hamburger icon -->
       <div class="hamburger-menu" @click="toggleMenu" :class="{ 'open': isOpen }">
         <div class="line top" :class="{ 'open': isOpen }"></div>
         <div class="line middle" :class="{ 'open': isOpen }"></div>
         <div class="line bottom" :class="{ 'open': isOpen }"></div>
       </div>
       <IconLogoMob class="logo-mob" :class="{ 'open': isOpen }" />
-
-
       <nav class="nav nav-main">
         <a href="#">About</a>
         <a href="#">Blog</a>
         <a href="#">FAQs</a>
       </nav>
-      <img alt="logo" class="logo" src="@/assets/logo.svg" />
-      
+      <img alt="logo" class="logo" :class="{ 'open': isOpen }" src="@/assets/logo.svg" />
       <nav class="nav nav-secondary">
         <RouterLink to="/login" class="login-btn">Log in</RouterLink>
-        <RouterLink to="/registration" class="btn">GET STARTED</RouterLink>
+        <RouterLink to="/registration" class="btn" :class="{ 'open': isOpen }">GET STARTED</RouterLink>
       </nav>
-
-
       <div class="mobile-nav">
-        <!-- <div class="nav-row">
-          <div>
-            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M25.6523 26L0.651396 1.00001" stroke="black"/>
-              <line y1="-0.5" x2="35.004" y2="-0.5" transform="matrix(-0.71422 0.699921 -0.556246 -0.831018 25.6504 1)" stroke="black"/>
-            </svg>
-
-            <svg width="46" height="34" viewBox="0 0 46 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91638 0L0.302734 6.40836V16.75H15.53V6.40836L7.91638 0Z" fill="#03C745"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1429 16.75L15.5293 23.1584V33.5H30.7566V23.1584L23.1429 16.75Z" fill="#E1BAFF"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M38.3715 16.75L30.7578 23.1584V33.5H45.9851V23.1584L38.3715 16.75Z" fill="#FC4F24"/>
-            </svg>
-          </div>
-
-          <RouterLink to="/registration" class="btn">GET STARTED</RouterLink>
-        </div> -->
-
         <ul class="menu" :class="{ 'open': isOpen }">
           <li><a href="#">About</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">FAQs</a></li>
           <li><a href="#">Log in</a></li>
         </ul>
-
       </div>
-
-
     </div>
   </header>
 </template>
@@ -73,15 +46,21 @@ const toggleMenu = () => {
   top: 0;
   z-index: 9;
   background-color: var(--ivory);
+  padding: 12px 0;
 }
 .container {
   display: flex;
   align-items: center;
 }
 .logo {
-  display: none;
-  margin: 0 auto;
+  height: auto;
+  width: 100%;
+  max-width: 110px;
+  margin: 0 auto 0 calc(50% - 75px);
   flex: 1 0 auto;
+}
+.logo.open {
+  display: none;
 }
 .header .nav.nav-main,
 .header .nav .login-btn {
@@ -96,23 +75,24 @@ nav {
   margin: 0 0 0 auto;
   justify-content: flex-end;
 }
+.nav-secondary .btn {
+  display: none;
+  padding: 7px 10px;
+}
+.nav-secondary .btn.open {
+  display: flex;
+}
 .btn {
-  background-color: var(--green);
-  font-family: "Scto-Grotesk-A-Medium";
-  font-weight: 700;
   padding: 13px 15px;
   z-index: 2;
 }
 .btn:hover {
-  background-color: var(--yellow);
   color: var(--black);
 }
-
-nav .nav-main a {
+nav a {
   font-size: 12px;
   display: inline-block;
   font-family: "Scto-Grotesk-A-Medium";
-  padding: 0 10px;
 }
 nav a:hover {
   color: var(--green);
@@ -125,9 +105,6 @@ nav a:hover {
   left: 0;
   width: 100%;
 }
-
-
-/* Hamburger styles */
 .hamburger-menu {
   display: flex;
   flex-direction: column;
@@ -135,12 +112,12 @@ nav a:hover {
   width: 30px;
   height: 20px;
   cursor: pointer;
-  z-index: 999;
+  z-index: 9;
 }
 .line {
   width: 100%;
-  height: 2px;
-  background-color: black;
+  height: 1px;
+  background-color: var(--black);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .top.open {
@@ -155,15 +132,14 @@ nav a:hover {
 .logo-mob {
   z-index: 2;
   margin: 0 0 0 10px;
+  display: none;
 }
 .logo-mob.open {
   display: block;
 }
-
-/* Menu styles */
 .menu {
   list-style: none;
-  padding: 50px 0 0;
+  padding: 72px 0 0;
   margin: 0;
   position: absolute;
   top: 0;
@@ -177,19 +153,21 @@ nav a:hover {
   transform: translateX(0);
 }
 .menu li {
-  padding: 10px 20px;
+  padding: 6px 20px;
 }
 .menu li a {
   text-decoration: none;
   color: black;
+  font-size: 30px;
+  letter-spacing: -1.5px;
 }
-
-
 @media (min-width: 768px) {
   .logo {
     display: flex;
-    height: 56px;
-    width: 205px;
+    max-height: 56px;
+    max-width: 205px;
+    margin: 0 auto;
+    flex: 1 0 auto;
   }
   .logo-mob,
   .logo-mob.open {
@@ -199,16 +177,25 @@ nav a:hover {
     padding: 22px 0;
   }
   .header .nav.nav-main,
+  .header .nav.nav-secondary {
+    flex: 1 0 auto;
+  }
+  .logo.open,
+  .header .nav.nav-main,
   .header .nav .login-btn {
     display: flex;
+  }
+  .nav.nav-main a + a {
+    padding: 0 0 0 22px;
   }
   .mobile-nav,
   .hamburger-menu {
     display: none;
   }
-  .nav .btn {
-    margin-left: 10px;
+  .nav-secondary .btn {
+    display: flex;
+    padding: 13px 15px;
+    margin-left: 22px;
   }
 }
-
 </style>

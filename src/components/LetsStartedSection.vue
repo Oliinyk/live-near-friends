@@ -15,7 +15,7 @@ export default {
         isActive: true
       },
       {
-        imgSrc: '/src/assets/img/img-bg.png',
+        imgSrc: imgBg,
         title: 'Apartment Cluster',
         subtitle: 'Rent a cluster of apartments in the same building.',
         buttonHref: '#',
@@ -23,7 +23,7 @@ export default {
         isActive: false
       },
       {
-        imgSrc: '/src/assets/img/img-bg.png',
+        imgSrc: imgBg,
         title: 'Backyard Buds',
         subtitle: 'Share a backyard with a friend.',
         buttonHref: '#',
