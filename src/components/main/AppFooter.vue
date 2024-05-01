@@ -7,6 +7,11 @@ import IconLogoFace from '../icons/IconLogoFace.vue'
     <div class="container">
       <div class="footer-inner">
         <form>
+          <div class="footer-txt">
+            <p>Feedback? Ideas? Success stories? We’d love to hear from you.</p>
+            <a href="mailto:hello@livenearfriends.com" class="footer-mail">hello@livenearfriends.com</a>
+          </div>
+
           <p class="label">Newsletter</p>
           <div class="form-group">
             <input type="text" placeholder="Email Address">
@@ -18,11 +23,6 @@ import IconLogoFace from '../icons/IconLogoFace.vue'
             <li><a href="">Terms and conditions</a></li>
             <li><a href="">Privacy policy</a></li>
           </ul>
-          <div class="footer-txt">
-            <p>Feedback? Ideas? Success stories?</p>
-            <p>We’d love to hear from you.</p>
-          </div>
-          <a href="mailto:hello@livenearfriends.com" class="footer-mail">hello@livenearfriends.com</a>
         </form>
 
         <p class="copyright">© Live Near Friends 2024</p>
@@ -38,15 +38,10 @@ import IconLogoFace from '../icons/IconLogoFace.vue'
 
 <style scoped>
 footer {
-  padding: 10px 0;
+  padding: 25px 0;
   background-color: var(--black);
   color: var(--white);
-  font-size: 12px;
-  font-weight: 300;
-}
-form {
-  width: 100%;
-  max-width: 440px;
+  font-size: 14px;
 }
 a {
   color: var(--white);
@@ -54,22 +49,25 @@ a {
 .footer-inner {
   display: flex;
   flex-direction: column;
-  margin-bottom: 55px;
+  margin-bottom: 113px;
 }
 .label {
   margin-bottom: 8px;
 }
 .form-group {
   display: flex;
-  margin-bottom: 15px;
+  flex-direction: column;
+  margin-bottom: 37px;
 }
 .form-group input {
   background-color: transparent;
   border: 1px solid var(--white);
+  border-radius: 5px;
   color: var(--white);
-  padding: 10px 20px;
+  padding: 12px;
   flex: 1;
   outline: none;
+  margin: 0 0 15px 0;
 }
 .form-group input::placeholder {
   color: var(--placeholder-dark);
@@ -79,19 +77,19 @@ a {
   justify-content: center;
   align-items: center;
   background-color: var(--white);
+  border-radius: 5px;
   cursor: pointer;
   color: var(--black);
-  font-family:"Scto-Grotesk-A-Medium";
-  font-weight: 700;
+  font-size: 14px;
+  font-family: 'Plain-Bold';
   text-transform: uppercase;
   border: none;
-  padding: 10px 26px;
+  padding: 12px 15px;
 }
 .footer-nav {
   list-style: none;
-  line-height: 1.8;
+  line-height: 1.9;
   padding: 0;
-  margin: 0 0 24px;
 }
 .footer-nav a {
   background-color: transparent;
@@ -101,17 +99,30 @@ a {
   text-decoration: underline;
 }
 .footer-txt {
-  line-height: 1.2;
-  margin: 0 0 5px;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -.9px;
+  margin: 0 0 32px;
 }
 .footer-mail {
-  text-decoration: underline;
+  color: var(--violet);
 }
 .copyright {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-family: 'Plain-Bold';
   text-transform: uppercase;
-  margin: 24px 0 0;
+  display: none;
+}
+
+@media (min-width: 545px) {
+  .form-group {
+    max-width: 427px;
+    margin-bottom: 37px;
+    flex-direction: row;
+  }
+  .form-group input {
+    margin: 0 15px 0 0; 
+  }
 }
 
 @media (min-width: 768px) {
@@ -121,13 +132,17 @@ a {
   .footer-inner {
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 135px;
+    margin-bottom: 90px;
   }
-  .form-group button {
-    padding: 15px 31px;
+  .footer-txt {
+    font-size: 22px;
   }
+}
+
+@media (min-width: 992px) {
   .copyright {
     margin: 0;
+    display: block;
   }
 }
 </style>

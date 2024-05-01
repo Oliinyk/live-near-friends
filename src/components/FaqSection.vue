@@ -4,27 +4,22 @@ import IconArrowDown from './icons/IconArrowDown.vue';
 
 const faqItems = ref([
   {
-    question: 'How is Live Near Friends different from apps like Street Easy?',
+    question: 'How is this different from Zillow or Redfin?',
+    answer: 'If you believe the people that you live near are just as important as the place you call home, then you deserve a housing search platform that’s multi-player instead of single player. We help groups find the right neighborhoods, coordinate timing, and evaluate homes together.',
+    isOpen: false
+  },
+  {
+    question: 'What if my friends or I can’t afford to buy?',
     answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     isOpen: false
   },
   {
-    question: 'How is Live Near Friends different from apps like Street Easy?',
+    question: 'Why does Live Near Friends use a 15-minute walking radius?',
     answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     isOpen: false
   },
   {
-    question: 'How is Live Near Friends different from apps like Street Easy?',
-    answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    isOpen: false
-  },
-  {
-    question: 'How is Live Near Friends different from apps like Street Easy?',
-    answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    isOpen: false
-  },
-  {
-    question: 'How is Live Near Friends different from apps like Street Easy?',
+    question: 'Does Live Near Friends let us talk to a real person if we need advice or support?',
     answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     isOpen: false
   },
@@ -41,14 +36,13 @@ const toggleAnswer = (index: number) => {
 </script>
 
 <template>
-  <div class="faq-section">
+  <section class="faq-section">
     <div class="container">
       <div class="title-wrap">
         <h2 class="title">SOME OF OUR FREQUENTLY ASKED QUESTIONS</h2>
-        <p class="subtitle">HEAD TO OUR FULL FAQ</p>
       </div>
-      <div v-for="(item, index) in faqItems" :key="index" :class="['faq-item', item.isOpen ? 'active' : '']">
-        <div class="question" @click="toggleAnswer(index)">
+      <div v-for="(item, index) in faqItems" :key="index" :class="['faq-item', item.isOpen ? 'active' : '']" @click="toggleAnswer(index)">
+        <div class="question" >
           <h3 class="item-title">{{ item.question }}</h3>
           <IconArrowDown class="arrow" />
         </div>
@@ -57,7 +51,7 @@ const toggleAnswer = (index: number) => {
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -73,40 +67,28 @@ const toggleAnswer = (index: number) => {
 }
 .title {
   color: var(--black);
-  font-family: "Scto-Grotesk-A-Medium";
-  font-weight: 700;
+  font-family: 'Plain-Bold';
   font-size: 16px;
   letter-spacing: -1px;
   line-height: 1.2;
   width: 100%;
   max-width: 50%;
 }
-.subtitle {
-  color: var(--black);
-  font-family: "Scto-Grotesk-A-Medium";
-  font-weight: 700;
-  text-align: right;
-  font-size: 12px;
-  width: 100%;
-  max-width: 50%;
-}
 .faq-item {
-  background-color: var(--blue);
+  background-color: var(--blue-light);
   border-radius: 7px;
   padding: 21px 22px;
   margin: 0 0 15px;
+  cursor: pointer;
 }
 .item-title {
-  color: var(--black);
-  font-family: "Scto-Grotesk-A-Medium";
-  font-size: 16px;
-  letter-spacing: -1.5px;
+  font-size: 18px;
+  letter-spacing: -1.2px;
   line-height: 1.2;
   text-wrap: balance;
   padding: 0 15px 0 0;
 }
 .question {
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,28 +102,29 @@ const toggleAnswer = (index: number) => {
 }
 .faq-item.active .answer {
   max-height: 1000px;
-  transition: max-height .25s ease-in-out;
+  transition: max-height 1s;
 }
 .item-answer {
-  color: var(--black);
-  padding: 15px 0 0;
+  max-width: 860px;
+  padding: 10px 0 0;
+  letter-spacing: -.8px;
 }
 .arrow {
   transition: transform .25s ease-in-out;  
 }
 .faq-item.active .arrow {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }
 
 @media (min-width: 768px) {
   .faq-section {
-    padding: 117px 0 105px;
+    padding: 115px 0 105px;
   }
   .title-wrap {
-    margin: 0 0 55px;
+    margin: 0 0 25px;
   }
   .title {
-    font-size: 20px;
+    font-size: 22px;
   }
   .faq-item {
     padding: 26px 30px;
@@ -151,7 +134,10 @@ const toggleAnswer = (index: number) => {
     font-size: 30px;
   }
   .answer {
-    font-size: 25px;
+    font-size: 20px;
+  }
+  .item-answer {
+    padding: 23px 0 10px;
   }
 }
 </style>

@@ -1,26 +1,32 @@
 <script setup lang="ts">
-  import IconHeroBg from './icons/IconHeroBg.vue';
-  // import IconPin from './icons/IconPin.vue';
-  // import IconPin1 from './icons/IconPin1.vue';
-  // import IconPin2 from './icons/IconPin2.vue';
+import { ref } from 'vue';
+
+const isLogoSmall = ref(false);
+
+window.addEventListener('scroll', () => {
+  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScrollTop > 0) {
+    isLogoSmall.value = true;
+  } else {
+    isLogoSmall.value = false;
+  }
+});
 </script>
 
 <template>
-  <section class="hero">
-    <IconHeroBg class="hero-bg"/>
+  <section class="hero" :class="{'logo-small': isLogoSmall}">
     <div class="container">
       <div class="hero-wrap">
         <div class="hero-inner">
-          <h1 class="title">Buy and rent homes near friends and family</h1>
-          <p class="subtitle">We make it simple and fun for you and your friends to become real estate conspirators. Start your own minihood today.</p>
-          <a href="#" class="btn">GET STARTED</a>
+          <h1 class="title">Buy and rent homes near friends & family</h1>
+          <p class="subtitle">We make it simple and fun for you and your friends to become real estate conspirators. Start your own mini neighborhood today.</p>
+          <a href="#" class="btn btn-large">Explore what’s possible</a>
         </div>
-        <div class="pin-wrap">
-          <!-- <IconPin class="pin" />
-          <IconPin1 class="pin" />
-          <IconPin2 class="pin" /> -->
-          <img alt="" src="@/assets/img/pin-wrap.svg" />
-        </div>
+        <video autoplay loop muted class="video-wrap">
+          <source src="@/assets/img/hero.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </section>
@@ -35,114 +41,58 @@
   overflow: hidden;
 }
 .hero-wrap {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 20px;
 }
 .hero-inner {
-  position: relative;
-  z-index: 1;
-  order: 2;
+  margin: 0 auto;
+}
+.video-wrap {
+  height: 100%;
+  width: 100%;
+  max-width: 559px;
+  max-height: 559px;
+  object-fit: cover;
+  border-radius: 7px;
+  margin: 0 auto;
 }
 .title {
-  font-family: "Consort RR LightCondensed";
+  font-family: "ConsortRRBoldCondensed";
   font-size: 40px;
   line-height: 0.85;
-  max-width: 800px;
+  max-width: 560px;
   margin: 0 0 20px;
 }
 .subtitle {
-  font-size: 16px;
-  line-height: 1.2;
-  max-width: 550px;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.9px;
+  max-width: 530px;
   margin: 0 0 25px;
 }
-.hero-bg {
-  position: absolute;
-  right: 0;
-  width: 175%;
-  bottom: 15%;
-}
-.btn {
-  display: inline-block;
-  background-color: var(--green);
-  font-family: "Scto-Grotesk-A-Medium";
-  font-weight: 700;
-  font-size: 12px;
-  padding: 8px 11px;
-}
-.btn:hover {
-  background-color: var(--yellow);
-  color: var(--black);
-}
-.pin-wrap {
-  width: 100%;
-  max-width: 225px;
-  order: 1;
-  margin: 0 0 40px auto;
-}
-.pin-wrap img {
-  position: relative;
-  max-width: 100%;
-  height: auto;
-}
-/* .pin {
-  position: absolute;
-  left: -40px;
-  top: 0;
-}
-.pin:nth-child(2n) {
-  right: 0;
-  left: auto;
-  top: 75px;
-}
-.pin:nth-child(3n) {
-  left: calc(50% - 103px);
-  top: auto;
-  bottom: 7px;
-} */
-
 @media (min-width: 768px) {
-  .hero-bg {
-    top: -30%;
-    width: 175%;
-  }
   .title {
     font-size: 100px;
-    margin: 0 0 32px;
+    margin: 50px 0 25px;
   }
   .subtitle {
-    font-size: 20px;
-    margin: 0 0 45px;
-  }
-  .pin-wrap {
-    max-width: 440px;
-  }
-  .btn {
-    padding: 14px 17px;
+    font-size: 22px;
+    margin: 0 0 40px;
   }
 }
 @media (min-width: 992px) {
   .hero {
-    padding: 168px 0 75px;
+    padding: 594px 0 122px;
+    transition: all 0.5s;
   }
-  .hero-bg {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+  .hero.logo-small {
+    padding: 207px 0 122px;
   }
   .hero-wrap {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-  .pin-wrap {
-    order: 2;
-    margin: 60px 0 0;
+    grid-template-columns: repeat(2, 1fr);
   }
   .hero-inner {
-    order: 1;
+    margin: 0;
   }
 }
 </style>

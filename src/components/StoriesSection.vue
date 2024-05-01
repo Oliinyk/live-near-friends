@@ -29,11 +29,10 @@ export default {
 <template>
   <section class="stories-section">
     <div class="container">
-      <h2 class="title">LNF Success Stories</h2>
+      <h2 class="title">Success stories</h2>
       <div class="text-holder">
-        <p class="subtitle">Learn how others have already done it. Lorem ipsum dolor
-        amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu.</p>
-        <a href="#" class="link">READ MORE STORIES ON OUR BLOG</a>
+        <p class="subtitle">Dive into the daily lives of folks who moved near their friends in our latest collection of case studies. Learn how they chose their homes and neighborhoods, and hear their stories of spontaneity and support.</p>
+        <a href="#" class="link">Read more on our blog</a>
       </div>
       <div class="stories-slider">
         <swiper
@@ -57,10 +56,9 @@ export default {
                 <img alt="slide-item" src="@/assets/img/slide-item-1.jpg" />
               </div>
               <div class="item-text-holder">
-                <p class="above-title">Case Study #001</p>
-                <h3 class="item-title">3 friends raise kids together in Oakland</h3>
-                <p class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu, non facilisis mauris.</p>
-                <a href="#" class="item-link">Read the full story</a>
+                <h3 class="item-title">New parents in Oakland, CA</h3>
+                <p class="item-text">Carmen & Osman and Deena moved into their respective homes in an existing minihood. They’re parenting their one-year-olds around lots of other toddler-parents.</p>
+                <a href="#" class="item-link link">Read the full story</a>
               </div>
             </div>
           </swiper-slide>
@@ -70,10 +68,9 @@ export default {
                 <img alt="slide-item" src="@/assets/img/slide-item-2.jpg" />
               </div>
               <div class="item-text-holder">
-                <p class="above-title">Case Study #002</p>
-                <h3 class="item-title">College friends reunite in Durham</h3>
-                <p class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet, diam nec dignissim consectetur, velit arcu scelerisque arcu, non facilisis mauris.</p>
-                <a href="#" class="item-link">Read the full story</a>
+                <h3 class="item-title">College friends reunited in Durham, NC</h3>
+                <p class="item-text">Reed & Eric took a pandemic leap of faith to live near Lauren & Mollie. Over the years, their families have gotten incredibly close, and bagel breakfasts are a weekend ritual.</p>
+                <a href="#" class="item-link link">Read the full story</a>
               </div>
             </div>
           </swiper-slide>
@@ -89,7 +86,7 @@ export default {
   padding: 58px 0 54px;
 }
 .title {
-  font-family: "Consort RR LightCondensed";
+  font-family: "ConsortRRBoldCondensed";
   font-size: 40px;
   line-height: 0.85;
   margin: 0 0 20px;
@@ -103,88 +100,64 @@ export default {
   z-index: 2;
 }
 .subtitle {
-  font-size: 16px;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.9px;
   max-width: 530px;
   margin: 0 0 15px;
   color: var(--black);
 }
-.link {
-  font-size: 12px;
-  font-family: "Scto-Grotesk-A-Medium";
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: var(--black);
-}
 .stories-slider .item {
-  max-width: 440px;
+  max-width: 488px;
+  padding: 0 24px;
   margin: 0 auto;
 }
 .img-holder img {
   border-radius: 7px;
 }
 .item-text-holder {
-  margin: 5px 0 0;
-}
-.above-title {
-  font-size: 6px;
-  margin: 0 0 14px;
-  color: var(--black);
+  margin: 5px 0;
 }
 .item-title {
-  font-family: "Consort RR LightCondensed";
+  font-family: "ConsortRRBoldCondensed";
   font-size: 30px;
-  line-height: 0.85;
+  line-height: 1;
   margin: 0 0 14px;
   color: var(--black);
 }
 .item-text {
   font-size: 10px;
-  line-height: 1.25;
+  line-height: 1.3;
+  letter-spacing: -.9px;
   margin: 0 0 5px;
-  color: var(--black);
-}
-.item-link {
-  font-size: 6px;
-  font-family: "Scto-Grotesk-A-Medium";
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
   color: var(--black);
 }
 @media (min-width: 768px) {
   .stories-section {
-    padding: 115px 0 125px;
+    padding: 130px 0 108px;
   }
   .title {
     font-size: 100px;
-    margin: 0 0 43px;
+    margin: 0 0 25px;
   }
   .text-holder {
     max-width: 50%;
     margin: 0;
   }
   .item-text-holder {
-    margin: 17px 0 0;
+    margin: 22px 0 5px;
   }
   .subtitle {
-    font-size: 20px;
-  }
-  .above-title {
-    font-size: 12px;
-    margin: 0 0 24px;
+    font-size: 22px;
+    margin: 0 0 32px;
   }
   .item-title {
     font-size: 60px;
-    margin: 0 0 25px;
+    margin: 0 -48px 25px 0;
   }
   .item-text {
-    font-size: 20px;
-    margin: 0 0 25px;
-  }
-  .item-link {
-    font-size: 12px;
+    font-size: 22px;
+    margin: 0 0 18px;
   }
   .stories-slider {
     margin: -225px 0 0;
@@ -232,7 +205,7 @@ export default {
   }
   @media (min-width: 768px) {
     .stories-slider-wrapper .swiper-wrapper {
-      padding-top: 117px;
+      padding-top: 112px;
     }
   }
 </style>

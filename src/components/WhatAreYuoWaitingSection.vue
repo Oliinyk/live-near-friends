@@ -22,7 +22,7 @@
   justify-content: center;
 }
 .title {
-  font-family: "Consort RR LightCondensed";
+  font-family: "ConsortRRBoldCondensed";
   font-size: 40px;
   line-height: 0.85;
   color: var(--white);

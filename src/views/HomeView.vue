@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import HeroSection from '../components/HeroSection.vue';
+import SimpleTrickSection from '../components/SimpleTrickSection.vue';
 import SliderMain from '../components/SliderMain.vue';
 import HowItWorks from '../components/HowItWorks.vue';
-import ImgSection from '../components/ImgSection.vue';
-import LetsStartedSection from '../components/LetsStartedSection.vue';
+import NearFriendsSection from '../components/NearFriendsSection.vue';
 import StoriesSection from '../components/StoriesSection.vue';
 import ImgHalfSection from '../components/ImgHalfSection.vue';
 import KnowSection from '../components/KnowSection.vue';
@@ -15,14 +15,14 @@ import WhatAreYuoWaitingSection from '../components/WhatAreYuoWaitingSection.vue
 <template>
   <main>
     <HeroSection/>
-    <SliderMain/>
+    <SimpleTrickSection/>
     <HowItWorks/>
-    <ImgSection/>
-    <LetsStartedSection/>
+    <NearFriendsSection/>
     <StoriesSection/>
     <ImgHalfSection/>
     <KnowSection/>
     <IconsSection/>
+    <SliderMain/>
     <FaqSection/>
     <WhatAreYuoWaitingSection/>
   </main>

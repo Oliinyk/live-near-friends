@@ -26,7 +26,7 @@
   width: 100%;
 }
 .app-col {
-  background-color: var(--blue-lagoon);
+  background-color: var(--primary-blue);
   display: flex;
   align-items: center;
   justify-content: center;

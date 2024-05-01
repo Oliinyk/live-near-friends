@@ -1,36 +1,76 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import IconLogoMob from '../icons/IconLogoMob.vue';
+import IconLogo from '../icons/IconLogo.vue';
 
 const isOpen = ref(false);
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
+
+
+const isHeaderHidden = ref(false);
+const isLogoSmall = ref(false);
+
+let lastScrollTop = 0;
+
+const sectionToStopHidingHeader = document.getElementById('simpleTrickSection');
+
+window.addEventListener('scroll', () => {
+  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  const isPastSection = sectionToStopHidingHeader ? currentScrollTop > sectionToStopHidingHeader.offsetTop : true;
+
+
+  // console.log("isPastSection = " + (currentScrollTop > sectionToStopHidingHeader.offsetTop))
+  // console.log("isPastSection = " + isPastSection)
+
+
+
+  if (currentScrollTop > lastScrollTop && isPastSection) {
+    // Scrolling down
+    isHeaderHidden.value = true;
+  } else {
+    // Scrolling up
+    isHeaderHidden.value = false;
+  }
+  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+
+  if (currentScrollTop > 0) {
+    isLogoSmall.value = true;
+  } else {
+    isLogoSmall.value = false;
+  }
+});
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header-hide': isHeaderHidden, 'header-small': isLogoSmall }">
     <div class="container">
       <div class="hamburger-menu" @click="toggleMenu" :class="{ 'open': isOpen }">
         <div class="line top" :class="{ 'open': isOpen }"></div>
         <div class="line middle" :class="{ 'open': isOpen }"></div>
         <div class="line bottom" :class="{ 'open': isOpen }"></div>
       </div>
+
       <IconLogoMob class="logo-mob" :class="{ 'open': isOpen }" />
+
       <nav class="nav nav-main">
-        <a href="#">About</a>
         <a href="#">Blog</a>
         <a href="#">FAQs</a>
       </nav>
-      <img alt="logo" class="logo" :class="{ 'open': isOpen }" src="@/assets/logo.svg" />
+
+      <div class="logo-wrap" :class="{ 'small': isLogoSmall }">
+        <IconLogo class="logo" />
+      </div>
+
       <nav class="nav nav-secondary">
         <RouterLink to="/login" class="login-btn">Log in</RouterLink>
         <RouterLink to="/registration" class="btn" :class="{ 'open': isOpen }">GET STARTED</RouterLink>
       </nav>
       <div class="mobile-nav">
         <ul class="menu" :class="{ 'open': isOpen }">
-          <li><a href="#">About</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">FAQs</a></li>
           <li><a href="#">Log in</a></li>
@@ -45,19 +85,30 @@ const toggleMenu = () => {
   position: sticky;
   top: 0;
   z-index: 9;
-  background-color: var(--ivory);
   padding: 12px 0;
 }
 .container {
   display: flex;
   align-items: center;
+  position: relative;
+}
+.logo-wrap {
+  position: absolute;
+  top: 13vw;
+  left: 30px;
+  right: 30px;
+  width: calc(100% - 60px);
+  transition: all 0.5s;
+}
+.logo-wrap.small {
+  top: 3px;
+  left: calc(50% - 102px);
+  max-height: 56px;
+  width: 205px;
 }
 .logo {
-  height: auto;
+  height: 100%;
   width: 100%;
-  max-width: 110px;
-  margin: 0 auto 0 calc(50% - 75px);
-  flex: 1 0 auto;
 }
 .logo.open {
   display: none;
@@ -90,9 +141,8 @@ nav {
   color: var(--black);
 }
 nav a {
-  font-size: 12px;
-  display: inline-block;
-  font-family: "Scto-Grotesk-A-Medium";
+  font-size: 40px;
+  font-family: "ConsortRRBoldCondensed";
 }
 nav a:hover {
   color: var(--green);
@@ -161,20 +211,20 @@ nav a:hover {
   font-size: 30px;
   letter-spacing: -1.5px;
 }
+.btn {
+  font-family: 'Plain-Bold';
+}
 @media (min-width: 768px) {
-  .logo {
-    display: flex;
-    max-height: 56px;
-    max-width: 205px;
-    margin: 0 auto;
-    flex: 1 0 auto;
-  }
   .logo-mob,
   .logo-mob.open {
     display: none;
   }
   .header {
-    padding: 22px 0;
+    padding: 27px 0;
+    transition: all 0.5s ease;
+  }
+  .header-hide {
+    transform: translateY(-100%);
   }
   .header .nav.nav-main,
   .header .nav.nav-secondary {
@@ -184,6 +234,11 @@ nav a:hover {
   .header .nav.nav-main,
   .header .nav .login-btn {
     display: flex;
+  }
+  nav a {
+    font-size: 14px;
+    font-family: 'Plain-Light';
+    display: inline-block;
   }
   .nav.nav-main a + a {
     padding: 0 0 0 22px;
