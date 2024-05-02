@@ -73,10 +73,7 @@ onUnmounted(() => {
         <div class="item-img-mob item-video-mob">
           <div class="item-video-wrap">
             <div class="item-inner-video">
-              <video autoplay loop muted>
-                <source src="@/assets/img/how-it-works-4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <img src="@/assets/img/how-it-works-4.gif" alt="how-it-works-4">
             </div>
             <div class="video-text-holder">
               <p>Great to meet you!
@@ -108,10 +105,7 @@ onUnmounted(() => {
         <div class="item-img item-video" :class="{ 'visible': currentImage === 4 }">
           <div class="item-video-wrap">
             <div class="item-inner-video">
-              <video autoplay loop muted>
-                <source src="@/assets/img/how-it-works-4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <img src="@/assets/img/how-it-works-4.gif" alt="how-it-works-4">
             </div>
             <div class="video-text-holder">
               <p>Great to meet you!
@@ -189,6 +183,10 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   position: relative;
+}
+.item-inner-video img {
+  object-fit: cover;
+  height: 225px;
 }
 .video-text-holder {
   background-color: var(--white);
@@ -299,6 +297,9 @@ onUnmounted(() => {
     max-height: 350px;
     border-radius: 30px;
   }
+  .item-inner-video img {
+    height: 350px;
+  }
   .how-it-works .num {
     display: none;
   }
@@ -351,7 +352,7 @@ onUnmounted(() => {
 }
 @media only screen and (min-width: 768px) and (max-width: 867px)  {
   .text-holder {
-    padding-bottom: 50vw;
+    padding-bottom: 52vw;
   }
   .last-item-text {
     padding-bottom: 113px;
