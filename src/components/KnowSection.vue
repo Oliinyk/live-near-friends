@@ -44,7 +44,7 @@ export default defineComponent({
 <template>
   <section class="know-section">
     <div class="container">
-      <!-- <swiper
+      <swiper
         :modules="modules"
         :slides-per-view="1"
         :loop="true"
@@ -56,14 +56,6 @@ export default defineComponent({
           disableOnInteraction: false,
         }"
         :speed="1000"
-      > -->
-      <swiper
-        :modules="modules"
-        :slides-per-view="1"
-        :loop="true"
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
-        navigation
       >
         <swiper-slide v-for="(slide, index) in slides" :key="index">
           <h2 class="title" v-if="slide.heading">{{ slide.heading }}</h2>
@@ -101,7 +93,6 @@ export default defineComponent({
   font-size: 18px;
   color: var(--black)
 }
-
 @media (min-width: 768px) {
   .know-section {
     padding: 112px 0 50px;
