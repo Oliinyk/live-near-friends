@@ -44,7 +44,7 @@ export default defineComponent({
 <template>
   <section class="know-section">
     <div class="container">
-      <swiper
+      <!-- <swiper
         :modules="modules"
         :slides-per-view="1"
         :loop="true"
@@ -56,6 +56,14 @@ export default defineComponent({
           disableOnInteraction: false,
         }"
         :speed="1000"
+      > -->
+      <swiper
+        :modules="modules"
+        :slides-per-view="1"
+        :loop="true"
+        @swiper="onSwiper"
+        @slideChange="onSlideChange"
+        navigation
       >
         <swiper-slide v-for="(slide, index) in slides" :key="index">
           <h2 class="title" v-if="slide.heading">{{ slide.heading }}</h2>
@@ -70,23 +78,23 @@ export default defineComponent({
 <style scoped>
 .know-section {
   background-color: var(--ivory);
-  padding: 112px 0 50px;
+  padding: 53px 0;
   text-align: center;
 }
 .title {
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Plain-Bold';
   letter-spacing: -0.5px;
   text-transform: uppercase;
-  margin: 0 0 20px;
+  margin: 0 0 30px;
   color: var(--black);
 }
 .text-holder {
   font-family: "ConsortRRBoldCondensed";
-  font-size: 30px;
+  font-size: 40px;
   line-height: 1;
   max-width: 900px;
-  margin: 0 auto 52px;
+  margin: 0 auto 30px;
   color: var(--black);
 }
 .description {
@@ -95,15 +103,25 @@ export default defineComponent({
 }
 
 @media (min-width: 768px) {
+  .know-section {
+    padding: 112px 0 50px;
+  }
   .title {
     font-size: 22px;
     margin: 0 0 48px;
   }
   .text-holder {
     font-size: 60px;
+    margin: 0 auto 52px;
   }
   .description {
     font-size: 22px;
+  }
+}
+@media (min-width: 992px) {
+  .text-holder {
+    margin-left: 220px;
+    margin-right: 220px;
   }
 }
 </style>
@@ -121,21 +139,31 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  bottom: 0;
+  top: auto;
 }
 .know-section .swiper-button-next::after,
 .know-section .swiper-button-prev::after {
   display: none;
 }
+.know-section .swiper-wrapper {
+  padding: 0 0 34px;
+}
 @media (min-width: 768px) {
   .know-section .swiper-button-next,
   .know-section .swiper-button-prev {
-    width: 120px
+    width: 120px;
+  }
+  .know-section .swiper-wrapper {
+    padding: 0;
   }
 }
 @media (min-width: 992px) {
   .know-section .swiper-button-next,
   .know-section .swiper-button-prev {
-    width: 205px
+    width: 205px;
+    bottom: auto;
+    top: calc(50% - 22px);
   }
 }
 </style>

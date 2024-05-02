@@ -23,10 +23,7 @@ window.addEventListener('scroll', () => {
           <p class="subtitle">We make it simple and fun for you and your friends to become real estate conspirators. Start your own mini neighborhood today.</p>
           <a href="#" class="btn btn-large">Explore what’s possible</a>
         </div>
-        <video autoplay loop muted class="video-wrap">
-          <source src="@/assets/img/hero.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <img src="@/assets/img/hero.gif" alt="" class="video-wrap">
       </div>
     </div>
   </section>
@@ -39,11 +36,11 @@ window.addEventListener('scroll', () => {
   color: var(--black);
   overflow: hidden;
   transition: all 0.5s;
-  padding: 30vw 0 50px;
+  padding: 37vw 0 60px;
 }
 .hero-wrap {
   display: grid;
-  gap: 20px;
+  gap: 60px;
 }
 .hero-inner {
   margin: 0 auto;
@@ -51,8 +48,8 @@ window.addEventListener('scroll', () => {
 .video-wrap {
   height: 100%;
   width: 100%;
-  max-width: 559px;
-  max-height: 559px;
+  max-width: 345px;
+  max-height: 345px;
   object-fit: cover;
   border-radius: 7px;
   margin: 0 auto;
@@ -60,9 +57,9 @@ window.addEventListener('scroll', () => {
 .title {
   font-family: "ConsortRRBoldCondensed";
   font-size: 40px;
-  line-height: 0.85;
+  line-height: 1;
   max-width: 560px;
-  margin: 0 0 20px;
+  margin: 0 0 17px;
 }
 .subtitle {
   font-size: 18px;
@@ -71,6 +68,10 @@ window.addEventListener('scroll', () => {
   max-width: 530px;
   margin: 0 0 25px;
 }
+.btn {
+  width: 100%;
+  max-width: 345px;
+}
 @media (min-width: 768px) {
   .hero {
     padding: 30vw 0 122px;
@@ -78,13 +79,25 @@ window.addEventListener('scroll', () => {
   .hero.logo-small {
     padding: 10vw 0 122px;
   }
+  .hero-wrap {
+    gap: 20px;
+  }
   .title {
     font-size: 100px;
     margin: 50px 0 25px;
+    line-height: 0.85;
   }
   .subtitle {
     font-size: 22px;
     margin: 0 0 40px;
+  }
+  .btn {
+    width: auto;
+    max-width: none;
+  }
+  .video-wrap {
+    max-width: 559px;
+    max-height: 559px;
   }
 }
 @media (min-width: 992px) {

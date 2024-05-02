@@ -19,6 +19,12 @@
 .app-col {
   width: 100%;
 }
+.img-col {
+  order: 2;
+}
+.app-col {
+  order: 1;
+}
 .img-col img {
   display: block;
   object-fit: cover;
@@ -43,6 +49,12 @@
   .img-col,
   .app-col {
     width: 50%;
+  }
+  .img-col {
+    order: 1;
+  }
+  .app-col {
+    order: 2;
   }
   .app-col {
     height: inherit;

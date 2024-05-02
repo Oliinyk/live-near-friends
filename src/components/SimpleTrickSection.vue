@@ -10,7 +10,8 @@
         text-align: center;
         text-transform: uppercase;
         background-color: var(--blue-light);
-        padding: 10px 0;
+        color: var(--black);
+        padding: 15px 0;
         font-size: 12px;
     }
     @media (min-width: 768px) {

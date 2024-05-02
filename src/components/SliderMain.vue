@@ -132,6 +132,7 @@ export default defineComponent({
 .slider-section {
     background-color: var(--yellow);
     padding: 10px 0 15px;
+    overflow: hidden;
 }
 .slider-section-title {
     font-size: 18px;

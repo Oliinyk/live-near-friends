@@ -37,22 +37,60 @@ onUnmounted(() => {
       <h2 class="title">How it works</h2>
       <div class="how-it-works-inner">
         <div class="text-holder item-text">
+          <span class="num">1</span>
           <p>Explore ideal <span class="bold-text uppercase-text">places</span> for you and your friends to live.</p>
         </div>
+
+        <div class="item-img-mob">
+          <img alt="how-it-works" src="@/assets/img/how-it-works-1.png" />
+        </div>
+
         <div class="text-holder item-text">
+          <span class="num">2</span>
           <p>Get your <span class="bold-text uppercase-text">friends</span> involved.</p>
         </div>
+
+        <div class="item-img-mob">
+          <img alt="how-it-works" src="@/assets/img/how-it-works-2.png" />
+        </div>
+
         <div class="text-holder item-text">
+          <span class="num">3</span>
           <p>Find <span class="bold-text uppercase-text">homes</span> for sale or rent
           that fit everyone’s needs.</p>
         </div>
-        <div class="text-holder item-text">
+
+        <div class="item-img-mob">
+          <img alt="how-it-works" src="@/assets/img/how-it-works-3.png" />
+        </div>
+
+        <div class="text-holder item-text last-item-text">
+          <span class="num">4</span>
           <p>Work with a Live Near Friends <span class="bold-text uppercase-text">specialist</span> agent to tour homes
           and sign on the dotted line.</p>
         </div>
+
+        <div class="item-img-mob item-video-mob">
+          <div class="item-video-wrap">
+            <div class="item-inner-video">
+              <video autoplay loop muted>
+                <source src="@/assets/img/how-it-works-4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="video-text-holder">
+              <p>Great to meet you!
+              How can I help?</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div>
-        <a href="#" class="btn btn-large">START EXPLORING NEIGHBORHOODS</a>
+      <div class="btn-wrap">
+        <a href="#" class="btn btn-large">
+          <span class="text-btn-desk">START EXPLORING NEIGHBORHOODS</span>
+          <span class="text-btn-mob">Explore what’s possible</span>
+        </a>
       </div>
     </div>
 
@@ -68,10 +106,9 @@ onUnmounted(() => {
           <img alt="how-it-works" src="@/assets/img/how-it-works-3.png" />
         </div>
         <div class="item-img item-video" :class="{ 'visible': currentImage === 4 }">
-          
           <div class="item-video-wrap">
             <div class="item-inner-video">
-              <video width="" height="350" autoplay loop muted>
+              <video autoplay loop muted>
                 <source src="@/assets/img/how-it-works-4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -81,7 +118,6 @@ onUnmounted(() => {
               How can I help?</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -93,21 +129,18 @@ onUnmounted(() => {
   background-color: var(--ivory);
   text-align: center;
   position: relative;
+  padding: 57px 0 60px;
 }
 .title {
   font-family: "ConsortRRBoldCondensed";
   font-size: 40px;
   line-height: 0.85;
-  margin: 0 0 58px;
+  margin: 0 0 55px;
   color: var(--black);
 }
 .how-it-works-inner {
   position: relative;
-}
-.how-it-works-inner {
-  background-image: url('../assets/img/IconHowItWorksMobBg.svg');
-  background-repeat: no-repeat;
-  background-position: center 15px;
+  background-size: contain;
 }
 .how-it-works-inner p {
   font-size: 18px;
@@ -122,12 +155,6 @@ onUnmounted(() => {
   max-width: 258px;
   margin: 0 auto;
   text-wrap: balance;
-  padding-top: 100px;
-  padding-bottom: 743px;
-}
-.text-holder:last-child {
-  max-width: 350px;
-  padding-bottom: 113px;
 }
 .app-col-inner {
   position: sticky;
@@ -155,10 +182,10 @@ onUnmounted(() => {
   position: relative;
 }
 .item-inner-video {
-  max-width: 350px;
-  max-height: 350px;
+  max-width: 225px;
+  max-height: 225px;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -167,12 +194,12 @@ onUnmounted(() => {
   background-color: var(--white);
   border-radius: 20px 20px 0 20px;
   position: absolute;
-  top: 55px;
-  left: -107px;
+  top: -45px;
+  left: -90px;
   font-size: 22px;
   letter-spacing: -1px;
   line-height: 1.3;
-  max-width: 215px;
+  max-width: 183px;
   padding: 15px 20px;
   text-align: left;
 }
@@ -188,13 +215,55 @@ onUnmounted(() => {
   right: 0;
   bottom: -15px;
 }
+.how-it-works .num {
+  color: var(--ivory);
+  background-color: var(--black);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+.item-img-mob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-lagoon);
+  border-radius: 10px;
+  padding: 59px 0;
+  margin: 25px auto 60px;
+  max-width: 345px;
+}
+.item-video-mob {
+  justify-content: flex-end;
+  padding: 105px 15px 59px;
+  margin-bottom: 32px;
+}
+.item-img-mob img {
+  max-width: 225px;
+}
+.app-col,
+.text-btn-desk {
+  display: none;
+}
+.btn-wrap {
+  padding: 0 15px;
+}
+.btn-wrap .btn {
+  width: 100%;
+  max-width: 345px;
+}
 @media (min-width: 768px) {
   .how-it-works {
     display: flex;
+    padding: 0;
   }
   .title {
-    font-size: 100px;
-    margin: 0 0 219px;
+    font-size: 80px;
+    margin: 0 0 100px;
   }
   .how-it-works-inner p {
     font-size: 22px;
@@ -202,6 +271,7 @@ onUnmounted(() => {
   .how-it-works-inner {
     background-image: url('../assets/img/IconHowItWorksBg.svg');
     background-position: center 15px;
+    background-repeat: no-repeat;
   }
   .info-col,
   .app-col {
@@ -214,6 +284,77 @@ onUnmounted(() => {
   .app-col {
     background-color: var(--blue-lagoon);
     padding: 100px 0 0;
+    display: block;
+  }
+  .text-holder {
+    padding-top: 100px;
+    padding-bottom: 743px;
+  }
+  .last-item-text {
+    max-width: 350px;
+    padding-bottom: 113px;
+  }
+  .item-inner-video {
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 30px;
+  }
+  .how-it-works .num {
+    display: none;
+  }
+  .item-img-mob,
+  .text-btn-mob {
+    display: none;
+  }
+  .text-btn-desk {
+    display: flex;
+  }
+  .video-text-holder {
+    top: 55px;
+    left: -107px;
+    max-width: 215px;
+  }
+  .btn-wrap {
+    padding: 0;
+  }
+  .btn-wrap .btn {
+    width: auto;
+    max-width: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .title {
+    font-size: 100px;
+    margin: 0 0 219px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .how-it-works-inner {
+    background-size: auto;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px)  {
+  .text-holder {
+    padding-bottom: 57vw;
+  }
+  .last-item-text {
+    padding-bottom: 113px;
+  }
+}
+@media only screen and (min-width: 868px) and (max-width: 991px)  {
+  .text-holder {
+    padding-bottom: 55vw;
+  }
+  .last-item-text {
+    padding-bottom: 113px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 867px)  {
+  .text-holder {
+    padding-bottom: 50vw;
+  }
+  .last-item-text {
+    padding-bottom: 113px;
   }
 }
 </style>

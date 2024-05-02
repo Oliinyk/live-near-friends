@@ -20,6 +20,12 @@
 .icon-section {
   background-color: var(--ivory);
   display: flex;
-  padding: 0 0 120px;
+  padding: 0 0 60px;
+}
+
+@media (min-width: 768px) {
+  .icon-section {
+    padding: 0 0 120px;
+  }
 }
 </style>

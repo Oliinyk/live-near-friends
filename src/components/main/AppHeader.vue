@@ -184,10 +184,10 @@ nav a:hover {
 }
 .menu {
   list-style: none;
-  padding: 72px 0 0;
+  padding: 107px 0 42px;
   margin: 0;
   position: absolute;
-  top: 0;
+  top: -12px;
   left: 0;
   width: 100%;
   background-color: var(--ivory);
@@ -198,13 +198,14 @@ nav a:hover {
   transform: translateX(0);
 }
 .menu li {
-  padding: 6px 20px;
+  padding: 10px 20px;
 }
 .menu li a {
   text-decoration: none;
   color: black;
-  font-size: 30px;
-  letter-spacing: -1.5px;
+  font-family: "ConsortRRBoldCondensed";
+  font-size: 40px;
+  line-height: 1;
 }
 .btn {
   font-family: 'Plain-Bold';

@@ -76,6 +76,7 @@ const toggleAnswer = (index: number) => {
 }
 .faq-item {
   background-color: var(--blue-light);
+  color: var(--black);
   border-radius: 7px;
   padding: 21px 22px;
   margin: 0 0 15px;
