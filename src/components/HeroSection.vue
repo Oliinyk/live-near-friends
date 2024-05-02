@@ -35,10 +35,11 @@ window.addEventListener('scroll', () => {
 <style scoped>
 .hero {
   background-color: var(--ivory);
-  padding: 30px 0 50px;
   position: relative;
   color: var(--black);
   overflow: hidden;
+  transition: all 0.5s;
+  padding: 30vw 0 50px;
 }
 .hero-wrap {
   display: grid;
@@ -71,6 +72,12 @@ window.addEventListener('scroll', () => {
   margin: 0 0 25px;
 }
 @media (min-width: 768px) {
+  .hero {
+    padding: 30vw 0 122px;
+  }
+  .hero.logo-small {
+    padding: 10vw 0 122px;
+  }
   .title {
     font-size: 100px;
     margin: 50px 0 25px;
@@ -82,17 +89,24 @@ window.addEventListener('scroll', () => {
 }
 @media (min-width: 992px) {
   .hero {
-    padding: 594px 0 122px;
-    transition: all 0.5s;
+    padding: 37vw 0 122px;
   }
   .hero.logo-small {
-    padding: 207px 0 122px;
+    padding: 12vw 0 122px;
   }
   .hero-wrap {
     grid-template-columns: repeat(2, 1fr);
   }
   .hero-inner {
     margin: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .hero {
+    padding: 587px 0 122px;
+  }
+  .hero.logo-small {
+    padding: 200px 0 122px;
   }
 }
 </style>

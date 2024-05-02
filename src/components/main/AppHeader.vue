@@ -1,47 +1,49 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
+
 import IconLogoMob from '../icons/IconLogoMob.vue';
 import IconLogo from '../icons/IconLogo.vue';
 
 const isOpen = ref(false);
+const isHeaderHidden = ref(false); // hide default header
+const isLogoSmall = ref(false);
+let lastScrollTop = 0;
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
 
+const handleScroll = () => {
+  const sectionToStopHidingHeader = document.getElementById('simpleTrickSection');
+  if (!sectionToStopHidingHeader) return;
 
-const isHeaderHidden = ref(false);
-const isLogoSmall = ref(false);
-
-let lastScrollTop = 0;
-
-const sectionToStopHidingHeader = document.getElementById('simpleTrickSection');
-
-window.addEventListener('scroll', () => {
   const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Hiding the header if the user scrolled down the page and reached the simpleTrickSection
+  isHeaderHidden.value = currentScrollTop >= sectionToStopHidingHeader.offsetTop;
 
-  const isPastSection = sectionToStopHidingHeader ? currentScrollTop > sectionToStopHidingHeader.offsetTop : true;
-
-
-  // console.log("isPastSection = " + (currentScrollTop > sectionToStopHidingHeader.offsetTop))
-  // console.log("isPastSection = " + isPastSection)
-
-
-
-  if (currentScrollTop > lastScrollTop && isPastSection) {
-    // Scrolling down
-    isHeaderHidden.value = true;
-  } else {
-    // Scrolling up
+  // Show the header if the user scrolled up the page and the header was hidden
+  if (currentScrollTop < lastScrollTop && isHeaderHidden.value) {
     isHeaderHidden.value = false;
   }
-  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 
+  lastScrollTop = currentScrollTop;
+
+  // small logo
   if (currentScrollTop > 0) {
     isLogoSmall.value = true;
   } else {
     isLogoSmall.value = false;
   }
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
@@ -54,7 +56,7 @@ window.addEventListener('scroll', () => {
         <div class="line bottom" :class="{ 'open': isOpen }"></div>
       </div>
 
-      <IconLogoMob class="logo-mob" :class="{ 'open': isOpen }" />
+      <IconLogoMob class="logo-mob" />
 
       <nav class="nav nav-main">
         <a href="#">Blog</a>
@@ -67,7 +69,7 @@ window.addEventListener('scroll', () => {
 
       <nav class="nav nav-secondary">
         <RouterLink to="/login" class="login-btn">Log in</RouterLink>
-        <RouterLink to="/registration" class="btn" :class="{ 'open': isOpen }">GET STARTED</RouterLink>
+        <RouterLink to="/registration" class="btn">GET STARTED</RouterLink>
       </nav>
       <div class="mobile-nav">
         <ul class="menu" :class="{ 'open': isOpen }">
@@ -94,14 +96,14 @@ window.addEventListener('scroll', () => {
 }
 .logo-wrap {
   position: absolute;
-  top: 13vw;
-  left: 30px;
-  right: 30px;
-  width: calc(100% - 60px);
+  top: 11vw;
+  left: 15px;
+  right: 15px;
+  width: calc(100% - 30px);
   transition: all 0.5s;
 }
 .logo-wrap.small {
-  top: 3px;
+  top: -100px;
   left: calc(50% - 102px);
   max-height: 56px;
   width: 205px;
@@ -127,11 +129,8 @@ nav {
   justify-content: flex-end;
 }
 .nav-secondary .btn {
-  display: none;
+  font-size: 12px;
   padding: 7px 10px;
-}
-.nav-secondary .btn.open {
-  display: flex;
 }
 .btn {
   padding: 13px 15px;
@@ -182,10 +181,6 @@ nav a:hover {
 .logo-mob {
   z-index: 2;
   margin: 0 0 0 10px;
-  display: none;
-}
-.logo-mob.open {
-  display: block;
 }
 .menu {
   list-style: none;
@@ -214,13 +209,23 @@ nav a:hover {
 .btn {
   font-family: 'Plain-Bold';
 }
+@media (min-width: 545px) {
+  .logo-wrap {
+    top: 6vw;
+  }
+}
 @media (min-width: 768px) {
-  .logo-mob,
-  .logo-mob.open {
+  .logo-mob {
     display: none;
   }
+  .logo-wrap {
+    top: 9vw;
+  }
+  .logo-wrap.small {
+    top: 0;
+  }
   .header {
-    padding: 27px 0;
+    padding: 29px 0;
     transition: all 0.5s ease;
   }
   .header-hide {
@@ -249,8 +254,20 @@ nav a:hover {
   }
   .nav-secondary .btn {
     display: flex;
-    padding: 13px 15px;
+    padding: 10px 15px;
     margin-left: 22px;
+  }
+}
+@media (min-width: 1024px) {
+  .logo-wrap {
+    left: 30px;
+    right: 30px;
+    width: calc(100% - 60px);
+  }
+}
+@media (min-width: 1440px) {
+  .logo-wrap {
+    top: 163px;
   }
 }
 </style>

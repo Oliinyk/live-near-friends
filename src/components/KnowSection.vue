@@ -30,9 +30,7 @@ export default defineComponent({
     const onSwiper = (swiper: SwiperType) => {
       console.log(swiper);
     };
-    const onSlideChange = () => {
-      // console.log('slide change');
-    };
+    const onSlideChange = () => {};
     return {
       slides,
       onSwiper,
