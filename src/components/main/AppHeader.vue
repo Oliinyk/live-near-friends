@@ -59,8 +59,8 @@ onUnmounted(() => {
       <IconLogoMob class="logo-mob" />
 
       <nav class="nav nav-main">
-        <a href="#">Blog</a>
-        <a href="#">FAQs</a>
+        <a href="#blog-section">Blog</a>
+        <a href="#faq-section">FAQs</a>
       </nav>
 
       <div class="logo-wrap" :class="{ 'small': isLogoSmall }">

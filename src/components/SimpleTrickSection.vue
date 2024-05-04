@@ -1,23 +1,59 @@
+<script setup lang="ts">
+  import IconAsSeenIn from './icons/IconAsSeenIn.vue';
+  import IconVox from './icons/IconVox.vue';
+  import IconAxios from './icons/IconAxios.vue';
+  import IconTheGuardian from './icons/IconTheGuardian.vue';
+  import IconBusinessInsider from './icons/IconBusinessInsider.vue';
+</script>
+
 <template>
     <section class="simple-trick-section" id="simpleTrickSection">
-        <h4>THE simple trick for your health and happiness</h4>
+        <div class="section-wrap">
+            <IconAsSeenIn />
+            <div class="icons-wrap">
+                <IconVox />
+                <IconAxios />
+                <IconTheGuardian />
+                <IconBusinessInsider />
+            </div>
+        </div>
     </section>
 </template>
 
 <style scoped>
     .simple-trick-section {
-        font-family: 'Plain-Bold';
-        text-align: center;
-        text-transform: uppercase;
         background-color: var(--blue-light);
-        color: var(--black);
-        padding: 15px 0;
-        font-size: 12px;
+        padding: 20px 0;
+    }
+    .section-wrap {
+        max-width: 625px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .icons-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 25px 15px 0;
+    }
+    .icons-wrap svg {
+        padding: 0 5px;
     }
     @media (min-width: 768px) {
         .simple-trick-section {
-            font-size: 14px;
-            padding: 13px 0;
+            padding: 25px 0;
+        }
+        .section-wrap {
+            flex-direction: row;
+        }
+        .icons-wrap {
+            width: calc(100% - 135px);
+            margin-left: auto;
+            padding: 0;
         }
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="stories-section">
+  <section class="stories-section" id="blog-section">
     <div class="container">
       <h2 class="title">Success stories</h2>
       <div class="text-holder">

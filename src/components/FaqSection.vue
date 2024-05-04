@@ -4,23 +4,18 @@ import IconArrowDown from './icons/IconArrowDown.vue';
 
 const faqItems = ref([
   {
-    question: 'How is this different from Zillow or Redfin?',
+    question: 'How this different than Zillow/Redfin/etc?',
     answer: 'If you believe the people that you live near are just as important as the place you call home, then you deserve a housing search platform that’s multi-player instead of single player. We help groups find the right neighborhoods, coordinate timing, and evaluate homes together.',
     isOpen: false
   },
   {
     question: 'What if my friends or I can’t afford to buy?',
-    answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    answer: 'Live Near Friends helps groups of friends both buy and rent homes. Everyone has different needs and preferences, and a mix of those two options might even be the best solution for your crew.',
     isOpen: false
   },
   {
     question: 'Why does Live Near Friends use a 15-minute walking radius?',
-    answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    isOpen: false
-  },
-  {
-    question: 'Does Live Near Friends let us talk to a real person if we need advice or support?',
-    answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    answer: 'Studies show that the happiness benefits of living near friends drop off quickly after 15 minutes. And we want you to be happy.',
     isOpen: false
   },
 ]);
@@ -36,7 +31,7 @@ const toggleAnswer = (index: number) => {
 </script>
 
 <template>
-  <section class="faq-section">
+  <section class="faq-section" id="faq-section">
     <div class="container">
       <div class="title-wrap">
         <h2 class="title">SOME OF OUR FREQUENTLY ASKED QUESTIONS</h2>

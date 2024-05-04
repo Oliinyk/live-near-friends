@@ -1,15 +1,15 @@
 <script lang="ts">
 import { ref } from 'vue';
-import imgMinihood from '@/assets/img/minihood.png';
-import imgApartmentCluster from '@/assets/img/apartment-cluster.png';
-import imgBackyardOasis from '@/assets/img/backyard-oasis.png';
+import IconApartmentCluster from '../components/icons/IconApartmentCluster.vue'
+import IconMinihood from '../components/icons/IconMinihood.vue'
+import IconBackyardOasis from '../components/icons/IconBackyardOasis.vue'
 
 export default {
   name: 'LetsStartedSection',
   setup() {
     const items = ref([
       {
-        imgSrc: imgApartmentCluster,
+        imgSrc: IconApartmentCluster,
         title: 'Apartment Cluster',
         subtitle: 'Rent a handful of apartments in the same building.',
         buttonHref: '#',
@@ -17,7 +17,7 @@ export default {
         isActive: false
       },
       {
-        imgSrc: imgMinihood,
+        imgSrc: IconMinihood,
         title: 'Minihood',
         subtitle: 'Carve out a corner in a neighborhood with your friends.',
         buttonHref: '#',
@@ -25,7 +25,7 @@ export default {
         isActive: true
       },
       {
-        imgSrc: imgBackyardOasis,
+        imgSrc: IconBackyardOasis,
         title: 'Backyard Oasis',
         subtitle: 'Your own private homes with a shared backyard.',
         buttonHref: '#',
@@ -41,14 +41,14 @@ export default {
 </script>
 
 <template>
-  <section class="near-friends-section">
+  <section class="near-friends-section" id="nearFriendsSection">
     <div class="container">
       <h2 class="title">Ways to live near friends</h2>
       <p class="subtitle">Pick one to get started.</p>
       <div class="lets-started-items">
         <div v-for="(item, index) in items" :key="index" class="lets-started-item" :class="{ active: item.isActive }">
           <div class="img-holder">
-            <img alt="" :src="item.imgSrc" />
+            <component :is="item.imgSrc" />
           </div>
           <div class="text-holder">
             <h3 class="item-title">{{ item.title }}</h3>
@@ -102,7 +102,7 @@ export default {
   max-height: 351px;
   flex: 1;
 }
-.lets-started-item img {
+.lets-started-item svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -185,6 +185,37 @@ export default {
   .item-title {
     font-size: 55px;
     margin: 0 0 27px;
+  }
+}
+</style>
+
+<style>
+.lets-started-item:nth-child(1) .card-img .highlight {
+  fill: var( --primary-blue);
+}
+.lets-started-item:nth-child(2) .card-img .highlight {
+  fill: var( --orange);
+}
+.lets-started-item:nth-child(3) .card-img .highlight {
+  fill: var( --pink);
+}
+@media (min-width: 768px) {
+  .lets-started-item:nth-child(1) .card-img .highlight,
+  .lets-started-item:nth-child(2) .card-img .highlight,
+  .lets-started-item:nth-child(3) .card-img .highlight {
+    fill: transparent;
+  }
+  .card-img .highlight {
+    transition: all .25s;
+  }
+  .lets-started-item:nth-child(1):hover .card-img .highlight {
+    fill: var( --primary-blue);
+  }
+  .lets-started-item:nth-child(2):hover .card-img .highlight {
+    fill: var( --orange);
+  }
+  .lets-started-item:nth-child(3):hover .card-img .highlight {
+    fill: var( --pink);
   }
 }
 </style>

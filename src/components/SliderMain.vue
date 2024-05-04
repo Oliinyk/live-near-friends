@@ -91,7 +91,7 @@ export default defineComponent({
             :loop="true"
             @swiper="onSwiper"
             @slideChange="onSlideChange"
-            :speed="3000"
+            :speed="5000"
             :autoplay="{
                 delay: 0,
                 disableOnInteraction: false,

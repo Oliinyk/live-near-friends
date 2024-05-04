@@ -58,11 +58,28 @@
 </template>
 
 <style scoped>
-    .hover-face:hover .icon-face {
-        opacity: 1;
-    }
-    .icon-face {
+.hover-face .icon-face {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+.hover-face:nth-child(3) .icon-face {
+    animation: fadeInOut 2s infinite;
+}
+.hover-face:nth-child(1) .icon-face {
+    animation: fadeInOut 2.5s infinite; 
+}
+.hover-face:nth-child(2) .icon-face {
+    animation: fadeInOut 3s infinite;
+}
+@keyframes fadeInOut {
+    0%, 100% {
         opacity: 0;
-        transition: opacity 0.25s ease-in-out;
+        visibility: hidden;
     }
+    25%, 75% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
 </style>

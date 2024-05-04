@@ -21,6 +21,9 @@
   --primary-blue: #3C9CF0;
   --blue-lagoon: #0E686E;
   --blue-light: #9AF3FF;
+  --orange: #FFB042;
+  --pink: #F29EC2;
+  
   
   --divider-light-1: rgba(60, 60, 60, 0.29);
   --divider-light-2: rgba(60, 60, 60, 0.12);
@@ -46,20 +49,6 @@
   --color-text: var(--text-light-1);
 
   --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--black);
-    --color-background-soft: var(--black-soft);
-    --color-background-mute: var(--black-mute);
-
-    --color-border: var(--divider-dark-2);
-    --color-border-hover: var(--divider-dark-1);
-
-    --color-heading: var(--text-dark-1);
-    --color-text: var(--text-dark-2);
-  }
 }
 
 *,
@@ -172,17 +161,4 @@
        url('./fonts/Plain/Plain-Thin-Italic/Plain-Thin-Italic.woff') format('woff');
   font-weight: 250;
   font-style: italic;
-}
-
-body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.25s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: 'Plain-Light';
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

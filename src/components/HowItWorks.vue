@@ -190,6 +190,7 @@ onUnmounted(() => {
 }
 .video-text-holder {
   background-color: var(--white);
+  color: var(--black);
   border-radius: 20px 20px 0 20px;
   position: absolute;
   top: -45px;

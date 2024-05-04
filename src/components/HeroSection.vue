@@ -21,7 +21,7 @@ window.addEventListener('scroll', () => {
         <div class="hero-inner">
           <h1 class="title">Buy and rent homes near friends & family</h1>
           <p class="subtitle">We make it simple and fun for you and your friends to become real estate conspirators. Start your own mini neighborhood today.</p>
-          <a href="#" class="btn btn-large">Explore what’s possible</a>
+          <a href="#nearFriendsSection" class="btn btn-large">Explore what’s possible</a>
         </div>
         <img src="@/assets/img/hero.gif" alt="" class="video-wrap">
       </div>

@@ -18,13 +18,23 @@ export default defineComponent({
     const slides = ref([
       {
         heading: 'DID YOU KNOW?',
-        textholder: '“Living within 1 mile of a friend can increase your happiness by 25%. Within 1/2 mile, this number is over 40%”',
-        description : 'Harvard Study',
+        textholder: '“You are the average of the 5 people you spend the most time with”',
+        description : 'Jim Rohn',
       },
       {
         heading: 'DID YOU KNOW?',
-        textholder: 'A happy friend who lives within a mile increases the probability that you are happy by 25%. Within half a mile, this number is over 40%!',
-        description: 'Harvard Study',
+        textholder: 'Friendship is the greatest of worldly goods … sacrifice almost everything to live where you can be near your friends',
+        description: 'C.S. Louis',
+      },
+      {
+        heading: 'DID YOU KNOW?',
+        textholder: 'Adult friendships are just employing increasingly aggressive pressure tactics to get friends to move to your city',
+        description: 'Anu Atuluru',
+      },
+      {
+        heading: 'DID YOU KNOW?',
+        textholder: 'Living within 1 mile of a friend can increase your happiness by 25%. Within 1/2 mile, this number is over 40%',
+        description: 'Harvard study',
       }
     ]);
     const onSwiper = (swiper: SwiperType) => {
