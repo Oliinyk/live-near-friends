@@ -23,7 +23,7 @@ window.addEventListener('scroll', () => {
         <div class="logo-wrap" :class="{ 'small': isLogoSmall }">
           <IconLogo class="logo" />
         </div>
-
+        
         <div class="hero-inner">
           <h1 class="title">Buy and rent homes near friends & family</h1>
           <p class="subtitle">We make it simple and fun for you and your friends to become real estate conspirators. Start your own mini neighborhood today.</p>

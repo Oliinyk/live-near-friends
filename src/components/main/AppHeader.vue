@@ -41,10 +41,8 @@ const handleScroll = () => {
   //mobile logo
   if (currentScrollTop > 250) {
     isLogoMob.value = false;
-    console.log(true)
   } else {
     isLogoMob.value = true;
-    console.log(false)
   }
 };
 
@@ -83,8 +81,8 @@ onUnmounted(() => {
       </nav>
       <div class="mobile-nav">
         <ul class="menu" :class="{ 'open': isOpen }">
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">FAQs</a></li>
+          <li><a href="#blog-section" @click="toggleMenu">Blog</a></li>
+          <li><a href="#faq-section" @click="toggleMenu">FAQs</a></li>
           <li><a href="#">Log in</a></li>
         </ul>
       </div>
@@ -184,14 +182,15 @@ nav a:hover {
   transform: translateY(-9px) rotate(-45deg);
 }
 .logo-mob {
-  z-index: 2;
   margin: 0 0 0 10px;
+  transition: all .25s;
+  z-index: 2;
 }
 .logo-mob.hide {
-  display: none;
+  opacity: 0;
 }
 .logo-mob.open {
-  display: block;
+  opacity: 1;
 }
 .menu {
   list-style: none;

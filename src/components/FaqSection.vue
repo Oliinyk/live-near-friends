@@ -106,7 +106,8 @@ const toggleAnswer = (index: number) => {
   letter-spacing: -.8px;
 }
 .arrow {
-  transition: transform .25s ease-in-out;  
+  transition: transform .25s ease-in-out;
+  flex: none;
 }
 .faq-item.active .arrow {
   transform: rotate(180deg);

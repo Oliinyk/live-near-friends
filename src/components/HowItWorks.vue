@@ -42,7 +42,7 @@ onUnmounted(() => {
         </div>
 
         <div class="item-img-mob">
-          <img alt="how-it-works" src="@/assets/img/how-it-works-1.png" />
+          <img alt="how-it-works" src="@/assets/img/how-it-works-1.svg" />
         </div>
 
         <div class="text-holder item-text">
@@ -51,7 +51,7 @@ onUnmounted(() => {
         </div>
 
         <div class="item-img-mob">
-          <img alt="how-it-works" src="@/assets/img/how-it-works-2.png" />
+          <img alt="how-it-works" src="@/assets/img/how-it-works-2.svg" />
         </div>
 
         <div class="text-holder item-text">
@@ -61,7 +61,7 @@ onUnmounted(() => {
         </div>
 
         <div class="item-img-mob">
-          <img alt="how-it-works" src="@/assets/img/how-it-works-3.png" />
+          <img alt="how-it-works" src="@/assets/img/how-it-works-3.svg" />
         </div>
 
         <div class="text-holder item-text last-item-text">
@@ -94,13 +94,13 @@ onUnmounted(() => {
     <div class="app-col">
       <div class="app-col-inner">
         <div class="item-img" :class="{ 'visible': currentImage === 1 }">
-          <img alt="how-it-works" src="@/assets/img/how-it-works-1.png" />
+          <img alt="how-it-works" src="@/assets/img/how-it-works-1.svg" />
         </div>
         <div class="item-img" :class="{ 'visible': currentImage === 2 }">
-          <img alt="how-it-works" src="@/assets/img/how-it-works-2.png" />
+          <img alt="how-it-works" src="@/assets/img/how-it-works-2.svg" />
         </div>
         <div class="item-img" :class="{ 'visible': currentImage === 3 }">
-          <img alt="how-it-works" src="@/assets/img/how-it-works-3.png" />
+          <img alt="how-it-works" src="@/assets/img/how-it-works-3.svg" />
         </div>
         <div class="item-img item-video" :class="{ 'visible': currentImage === 4 }">
           <div class="item-video-wrap">

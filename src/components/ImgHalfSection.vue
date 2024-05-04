@@ -4,7 +4,7 @@
       <img alt="img-half" src="@/assets/img/img-1.jpg" />
     </div>
     <div class="app-col">
-      <img alt="img-half" src="@/assets/img/phone-app.png" />
+      <img alt="img-half" src="@/assets/img/phone-app.svg" />
     </div>
   </section>
 </template>
