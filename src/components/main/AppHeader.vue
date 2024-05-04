@@ -8,6 +8,7 @@ import IconLogo from '../icons/IconLogo.vue';
 const isOpen = ref(false);
 const isHeaderHidden = ref(false); // hide default header
 const isLogoSmall = ref(false);
+const isLogoMob = ref(true);
 let lastScrollTop = 0;
 
 const toggleMenu = () => {
@@ -36,6 +37,15 @@ const handleScroll = () => {
   } else {
     isLogoSmall.value = false;
   }
+
+  //mobile logo
+  if (currentScrollTop > 250) {
+    isLogoMob.value = false;
+    console.log(true)
+  } else {
+    isLogoMob.value = true;
+    console.log(false)
+  }
 };
 
 onMounted(() => {
@@ -56,7 +66,7 @@ onUnmounted(() => {
         <div class="line bottom" :class="{ 'open': isOpen }"></div>
       </div>
 
-      <IconLogoMob class="logo-mob" />
+      <IconLogoMob class="logo-mob" :class="{ 'hide': isLogoMob, 'open': isOpen }"/>
 
       <nav class="nav nav-main">
         <a href="#blog-section">Blog</a>
@@ -101,12 +111,7 @@ onUnmounted(() => {
   right: 15px;
   width: calc(100% - 30px);
   transition: all 0.5s;
-}
-.logo-wrap.small {
-  top: -100px;
-  left: calc(50% - 102px);
-  max-height: 56px;
-  width: 205px;
+  display: none;
 }
 .logo {
   height: 100%;
@@ -182,6 +187,12 @@ nav a:hover {
   z-index: 2;
   margin: 0 0 0 10px;
 }
+.logo-mob.hide {
+  display: none;
+}
+.logo-mob.open {
+  display: block;
+}
 .menu {
   list-style: none;
   padding: 107px 0 42px;
@@ -210,20 +221,19 @@ nav a:hover {
 .btn {
   font-family: 'Plain-Bold';
 }
-@media (min-width: 545px) {
-  .logo-wrap {
-    top: 6vw;
-  }
-}
 @media (min-width: 768px) {
   .logo-mob {
     display: none;
   }
   .logo-wrap {
     top: 9vw;
+    display: block;
   }
   .logo-wrap.small {
     top: 0;
+    left: calc(50% - 102px);
+    max-height: 56px;
+    width: 205px;
   }
   .header {
     padding: 29px 0;

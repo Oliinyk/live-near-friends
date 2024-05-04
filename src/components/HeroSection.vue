@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import IconLogo from '../components/icons/IconLogo.vue';
 
 const isLogoSmall = ref(false);
 
@@ -18,6 +19,11 @@ window.addEventListener('scroll', () => {
   <section class="hero" :class="{'logo-small': isLogoSmall}">
     <div class="container">
       <div class="hero-wrap">
+
+        <div class="logo-wrap" :class="{ 'small': isLogoSmall }">
+          <IconLogo class="logo" />
+        </div>
+
         <div class="hero-inner">
           <h1 class="title">Buy and rent homes near friends & family</h1>
           <p class="subtitle">We make it simple and fun for you and your friends to become real estate conspirators. Start your own mini neighborhood today.</p>
@@ -36,7 +42,7 @@ window.addEventListener('scroll', () => {
   color: var(--black);
   overflow: hidden;
   transition: all 0.5s;
-  padding: 37vw 0 60px;
+  padding: 50px 0 60px;
 }
 .hero-wrap {
   display: grid;
@@ -72,6 +78,10 @@ window.addEventListener('scroll', () => {
   width: 100%;
   max-width: 345px;
 }
+.logo {
+  height: 100%;
+  width: 100%;
+}
 @media (min-width: 768px) {
   .hero {
     padding: 30vw 0 122px;
@@ -98,6 +108,9 @@ window.addEventListener('scroll', () => {
   .video-wrap {
     max-width: 559px;
     max-height: 559px;
+  }
+  .logo-wrap {
+    display: none;
   }
 }
 @media (min-width: 992px) {

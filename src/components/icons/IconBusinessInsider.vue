@@ -12,6 +12,7 @@
 
 <style scoped>
 .business-ico {
+    width: 100%;
     max-width: 136px;
     max-height: 12px;
 }

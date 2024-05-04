@@ -12,6 +12,7 @@
 
 <style scoped>
 .guardian-ico {
+    width: 100%;
     max-width: 62px;
     max-height: 21px;
 }
